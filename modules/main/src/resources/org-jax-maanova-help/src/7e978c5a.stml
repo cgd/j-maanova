@@ -1,0 +1,15 @@
+:title Saving and Opening Projects
+:label save-open-projects
+
+J/maanova projects can be saved at any point so that you can share your project or resume your analysis at any time. When you save a project all of the data objects and R command history will be saved. Information such as window placement and which graphs are showing is not currently saved.
+
+:h2 Initial State
+When J/maanova initially starts up it always creates a new empty project. You can either start working on this project by following the workflow guidelines or you can load a J/maanova project file to resume an existing workflow.
+
+:h2 Saving Your Project
+There are two ways to save your project
+- ::**File->Save Project**::: This save will overwrite your existing project file with the current project state. If your project is not yet associated with a project file you will be prompted to create a project file.
+- ::**File->Save Project As**::: The "Save As" option allows you to save your current project state to a new file rather than overwriting the current file. This option is especially useful for backing up your work and saving exploratory work that you are not sure you want to keep in the final analysis.
+
+:h2 Opening Projects
+You can open any J/maanova project using the ::**File->Open Project**:: menu item. J/maanova also allows you to quickly open projects that you have recently worked with via the ::**File->Open Recent Projects->...**:: menu. Because J/maanova only allows one project to be open at a time you will be prompted to save or discard any unsaved project changes before opening a new project.

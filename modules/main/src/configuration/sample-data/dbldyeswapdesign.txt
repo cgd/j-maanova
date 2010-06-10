@@ -1,0 +1,9 @@
+Array	Dye	Sample
+Array1	Cy5	1
+Array1	Cy3	2
+Array2	Cy5	2
+Array2	Cy3	1
+Array3	Cy5	1
+Array3	Cy3	2
+Array4	Cy5	2
+Array4	Cy3	1

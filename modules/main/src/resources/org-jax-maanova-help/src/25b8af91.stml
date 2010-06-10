@@ -1,0 +1,38 @@
+:title PairContrast Function
+:label pair-contrast
+
+Pairwise comparison matrix
+
+:h2 Description
+
+It returns all possible pairwise comparison.
+:h2 Usage
+
+PairContrast(n)
+
+:h2 Arguments
+- n: 	Number of levels in test term.
+
+:h2 Value
+- res: 	All pairwise comparison matrix.
+
+:h2 Author(s)
+
+Hyuna Yang
+
+:h2 Examples
+
+::\# load in abf1 data
+
+::data(abf1)
+
+::fit.full.mix <- fitmaanova(abf1, formula = ~Strain+Sample, 
+   random = ~Sample)
+
+::ftest.all = matest(abf1, fit.full.mix, test.method=c(1,1),
+    shuffle.method="sample", term="Strain", n.perm= 100)
+
+::C = PairContrast(3)
+
+::ftest.pair = matest(abf1, fit.full.mix, Contrast = C, 
+   term="Strain", n.perm=100)

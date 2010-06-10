@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- for dev test deployment -->
+<!--<jnlp
+    spec="1.5+"
+    codebase="file:/Users/kss/projects/j-maanova-dev/web-dist/app/"
+    href="j-maanova.jnlp"
+    version="1.0.0">-->
+
+<!-- for internal test deployment -->
+<jnlp
+    spec="1.5+"
+    codebase="http://zapp.jax.org/jmaanova/1.0.0-build5/app"
+    href="j-maanova.jnlp"
+    version="1.0.0">
+
+<!-- for public deployment -->
+<!--<jnlp
+    spec="1.5+"
+    codebase="http://cgd.jax.org/churchill-apps/jmaanova-1.0.0/app"
+    href="j-maanova.jnlp"
+    version="1.0.0">-->
+    
+    <information>
+        <title>J-maanova 1.0.0</title>
+        <vendor>The Jackson Laboratory</vendor>
+        <homepage href="http://churchill.jax.org"/>
+        <description kind="one-line">A graphical MAANOVA analysis tool which sits on R/maanova</description>
+        <offline-allowed/>
+        <shortcut online="false">
+            <desktop/>
+            <menu submenu="TJL"/>
+        </shortcut>
+    </information>
+    
+    <security>
+        <all-permissions/>
+    </security>
+    
+    <resources>
+        <j2se version="1.5+"/>
+        
+        <!--
+        we really need to tease apart which jars are needed just by manifest
+        and just by JNLP launcher/installer.
+        -->
+        <jar href="dist/j-maanova-1.0.0.jar"/>
+        <jar href="dist/lib/j-maanova-classpath-bundle-1.0.0.jar"/>
+        <jar href="dist/lib/data-plots-1.0.jar"/>
+        <jar href="dist/lib/rjava-conf-schema-1.0.jar"/>
+        <jar href="dist/lib/java-util-1.0.jar"/>
+        <jar href="dist/lib/managed-jvm-launcher-1.0.jar"/>
+        <jar href="dist/lib/rjava-interface-1.0.jar"/>
+
+        <jar href="dist/lib/BrowserLauncher2-1.3.jar"/>
+        <jar href="dist/lib/jhall-2.0.jar"/>
+        <jar href="dist/lib/swing-layout-1.0.3.jar"/>
+
+        <jar href="dist/lib/activation-2.1.6.jar"/>
+        <jar href="dist/lib/jaxb-api-2.1.6.jar"/>
+        <jar href="dist/lib/jaxb-impl-2.1.6.jar"/>
+        <jar href="dist/lib/jsr173_1.0_api-2.1.6.jar"/>
+
+        <jar href="dist/lib/jcommon-1.0.13.jar"/>
+        <jar href="dist/lib/jfreechart-1.0.13.jar"/>
+
+        <jar href="dist/lib/JRI-0.8-1.jar"/>
+    </resources>
+    
+    <resources os="Mac OS X">
+        <jar href="dist/lib/JRI-Mac-natives-0.8-1.jar"/>
+    </resources>
+    
+    <resources os="Windows">
+        <jar href="dist/lib/JRI-Windows-natives-0.8-1.jar"/>
+    </resources>
+    
+    <application-desc main-class="org.jax.maanova.MaanovaLauncher"/>
+    
+</jnlp>

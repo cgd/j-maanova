@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="resultsTableScrollPane" alignment="0" pref="680" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="testNumberLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="testNumberComboBox" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="filterSortRowsButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="subsetColumnsButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="exportToFlatFileButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="showVolcanoPlotButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="saveGeneListButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="helpButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="totalRowCountLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="totalRowCountTextField" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="selectedRowCountLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="selectedRowCountTextField" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="testNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="testNumberComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="filterSortRowsButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="subsetColumnsButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="resultsTableScrollPane" pref="213" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="totalRowCountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="totalRowCountTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="selectedRowCountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="selectedRowCountTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="exportToFlatFileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="showVolcanoPlotButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="saveGeneListButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="helpButton" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="testNumberLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Test Number:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="testNumberComboBox">
+    </Component>
+    <Component class="javax.swing.JButton" name="filterSortRowsButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Filter/Sort Rows..."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="subsetColumnsButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Edit Columns..."/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="resultsTableScrollPane">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="resultsTable">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="totalRowCountLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total Row Count:"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="totalRowCountTextField">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="selectedRowCountLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Selected Row Count:"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="selectedRowCountTextField">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="exportToFlatFileButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Export To CSV..."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="showVolcanoPlotButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Show Volcano Plot..."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="saveGeneListButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Add Selected Rows to List..."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="helpButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Help..."/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>

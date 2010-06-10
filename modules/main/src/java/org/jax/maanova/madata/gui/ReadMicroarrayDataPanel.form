@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.6" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="twoColorArraySettingsPanel" alignment="1" max="32767" attributes="0"/>
+                  <Component id="generalSettingsPanel" alignment="1" pref="551" max="32767" attributes="0"/>
+                  <Component id="fileInputPanel" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="dataNameLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="dataNameTextField" min="-2" pref="153" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="fileInputPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="generalSettingsPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="twoColorArraySettingsPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="dataNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dataNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="fileInputPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Input Files"/>
+          </Border>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+      </AuxValues>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="designFileLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="dataFileLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="dataFileTextField" pref="185" max="32767" attributes="0"/>
+                      <Component id="designFileTextField" alignment="1" pref="185" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="browseDataFileButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="browseDesignFileButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="previewDataFileButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="previewDesignFileButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="dataFileLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="previewDataFileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="browseDataFileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="dataFileTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="designFileLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="designFileTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="previewDesignFileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="browseDesignFileButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="dataFileLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Experiment Data:"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="dataFileTextField">
+        </Component>
+        <Component class="javax.swing.JButton" name="browseDataFileButton">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/action/browse-16x16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Browse ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="previewDataFileButton">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/action/preview-16x16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Preview ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="designFileLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Experiment Design:"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JTextField" name="designFileTextField">
+        </Component>
+        <Component class="javax.swing.JButton" name="browseDesignFileButton">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/action/browse-16x16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Browse ..."/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="previewDesignFileButton">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/action/preview-16x16.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Preview ..."/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="generalSettingsPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="General Settings"/>
+          </Border>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+      </AuxValues>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="5" pref="5" max="5" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="arrayTypeLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="arrayTypeComboBox" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="intensityColumnLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="probeIdColumnCheckBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="probeIdColumnSpinner" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="intensityColumnSpinner" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="log2TransformCheckBox" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="arrayTypeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="arrayTypeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="probeIdColumnSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="probeIdColumnCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="intensityColumnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="intensityColumnSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="log2TransformCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="arrayTypeLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Array Type:"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="arrayTypeComboBox">
+        </Component>
+        <Component class="javax.swing.JSpinner" name="probeIdColumnSpinner">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 24]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="intensityColumnLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="First Intensity Column:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="intensityColumnSpinner">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 24]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="log2TransformCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Log2 Transform Intensity Values"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="probeIdColumnCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Probe ID Column (Optional):"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="twoColorArraySettingsPanel">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Two-Color Array Settings"/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="includeMetarowMetacolumnCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="metarowColumnLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="numReplicatesLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rowColumnLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="metarowColumnSpinner" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="metacolumnColumnLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="numReplicatesSpinner" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="collapseReplicatesLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="rowColumnSpinner" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="columnColumnLabel" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="columnColumnSpinner" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="collapseReplicatesComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="metacolumnColumnSpinner" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="spotFlagIncludedCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="65" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="includeMetarowMetacolumnCheckBox" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="metarowColumnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="metarowColumnSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="metacolumnColumnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="metacolumnColumnSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="rowColumnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="rowColumnSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="columnColumnLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="columnColumnSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="numReplicatesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="collapseReplicatesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="numReplicatesSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="collapseReplicatesComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="spotFlagIncludedCheckBox" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="collapseReplicatesLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Collapse Replicates To:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="collapseReplicatesComboBox">
+        </Component>
+        <Component class="javax.swing.JLabel" name="numReplicatesLabel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Number of Replicates:"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="numReplicatesLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Number of Replicates:"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="numReplicatesSpinner">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 24]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="numReplicatesLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Number of Replicates:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="spotFlagIncludedCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Data Includes Spot Flag"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="rowColumnLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Probe Row Column:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="rowColumnSpinner">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 24]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="columnColumnLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Probe Column Column:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="columnColumnSpinner">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 24]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="includeMetarowMetacolumnCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Data Includes Metarow and Metacolumn"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="metarowColumnLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Probe Metarow Column:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="metarowColumnSpinner">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 24]"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="metacolumnColumnLabel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Probe Metacolumn Column:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="metacolumnColumnSpinner">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[50, 24]"/>
+            </Property>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="dataNameLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Microarray Data Object Name:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="dataNameTextField">
+    </Component>
+  </SubComponents>
+</Form>

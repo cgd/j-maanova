@@ -1,0 +1,13 @@
+Done:
+    - Load and Normalization (affy, 2color, eset from BioC)
+    - fitting
+    - residual plot
+    - test
+    - volcano plot
+    - test stats table (partial)
+Remaining:
+    - Grid check (Skip for 1.0)
+    - RI Plot
+    - Array Plot
+    - Cluster plots (Skip for 1.0)
+    - limma integration (Skip for 1.0)

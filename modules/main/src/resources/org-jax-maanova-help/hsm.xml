@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HelpSetMaker>
+<DocumentProperties>
+<Value Key="eclipse.makeintro">false</Value>
+<Value Key="eclipse.quotation">none</Value>
+<Value Key="general.locale">ar</Value>
+<Value Key="general.uselabelforfilename">false</Value>
+<Value Key="helpset.createjarfile">false</Value>
+<Value Key="helpset.fulltextsearch">true</Value>
+<Value Key="helpset.mainlocalesuffix">false</Value>
+<Value Key="helpset.navigation.bottom">none</Value>
+<Value Key="helpset.navigation.top">none</Value>
+<Value Key="helpset.quotation">none</Value>
+<Value Key="helpset.scaleimages">false</Value>
+<Value Key="helpset.titletag">false</Value>
+<Value Key="html4.cssfortree">false</Value>
+<Value Key="html4.navigation.bottom">none</Value>
+<Value Key="html4.navigation.top">none</Value>
+<Value Key="html4.quotation">none</Value>
+<Value Key="html4.scaleimages">false</Value>
+<Value Key="html4.titletag">false</Value>
+<Value Key="latex.firstsection.ownpage">false</Value>
+<Value Key="latex.firstsection.type">abstract</Value>
+<Value Key="latex.fontsize">10pt</Value>
+<Value Key="latex.fontstyle">cm</Value>
+<Value Key="latex.image.frame">false</Value>
+<Value Key="latex.ownpage">false</Value>
+<Value Key="latex.papertype">a4paper</Value>
+<Value Key="latex.paragraph">inset</Value>
+<Value Key="latex.quotation">none</Value>
+<Value Key="latex.references">empty</Value>
+<Value Key="latex.scaleimages">false</Value>
+<Value Key="latex.sectioning.deepest">section</Value>
+<Value Key="latex.sectioning.uppermost">part</Value>
+<Value Key="latex.sides">oneside</Value>
+<Value Key="latex.usehyperref">false</Value>
+<Value Key="preview.unscaledimages">false</Value>
+<Value Key="project.charset">UTF-8</Value>
+<Value Key="stml.charset">UTF-8</Value>
+</DocumentProperties>
+<DocumentTree>
+<DocumentNode>
+<Filename>1c60f495</Filename>
+<Title>J/maanova 1.0.0</Title>
+<Label>first-topic</Label>
+<FullTextSearch>true</FullTextSearch>
+<DocumentNode>
+<Filename>643f5712</Filename>
+<Title>Copyright and License</Title>
+<Label>license</Label>
+<FullTextSearch>false</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>963b9d50</Filename>
+<Title>Installation and Uninstallation</Title>
+<Label>installation</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>7e978c5a</Filename>
+<Title>Saving and Opening Projects</Title>
+<Label>save-open-projects</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>57973b71</Filename>
+<Title>Exporting R Commands</Title>
+<Label>export-r-commands</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>4b5a359e</Filename>
+<Title>Exporting R Data</Title>
+<Label>export-r-data</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>3839db05</Filename>
+<Title>Exporting Microarray Data to CSV</Title>
+<Label>export-ma-data-to-csv</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>c58bb1d7</Filename>
+<Title>Interacting With the R Terminal</Title>
+<Label>r-terminal</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>03add5f1</Filename>
+<Title>Loading Microarray Data</Title>
+<Label>load-data</Label>
+<FullTextSearch>true</FullTextSearch>
+<DocumentNode>
+<Filename>08181793</Filename>
+<Title>Loading Tab-Delimited Microarray Data</Title>
+<Label>load-tab-data</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>b67c5ef0</Filename>
+<Title>Loading Affymetrix Microarray Data</Title>
+<Label>load-affy-data</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+</DocumentNode>
+<DocumentNode>
+<Filename>55f4aae5</Filename>
+<Title>Analysis</Title>
+<Label>analysis</Label>
+<FullTextSearch>true</FullTextSearch>
+<DocumentNode>
+<Filename>a8eb6286</Filename>
+<Title>Show Experiment Design</Title>
+<Label>design</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>9bb7e965</Filename>
+<Title>Fit ANOVA Model</Title>
+<Label>fit-anova</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>9df05950</Filename>
+<Title>Test ANOVA Model</Title>
+<Label>test-anova</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>622c152b</Filename>
+<Title>Test Results Table</Title>
+<Label>test-results-table</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>0b19dc61</Filename>
+<Title>Gene Lists</Title>
+<Label>gene-list</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+</DocumentNode>
+<DocumentNode>
+<Filename>5adb6e94</Filename>
+<Title>Graphs</Title>
+<Label>graphs</Label>
+<FullTextSearch>true</FullTextSearch>
+<DocumentNode>
+<Filename>9e9ed1b2</Filename>
+<Title>Array Intensity Scatter Plot</Title>
+<Label>array-scatter-plot</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>2f796f65</Filename>
+<Title>Plot Residuals vs. Estimates</Title>
+<Label>residual-plot</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>0236361d</Filename>
+<Title>Volcano Plot</Title>
+<Label>volcano-plot</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+</DocumentNode>
+<DocumentNode>
+<Filename>f77ba5a7</Filename>
+<Title>R Documentation</Title>
+<Label>r-docs</Label>
+<FullTextSearch>true</FullTextSearch>
+<DocumentNode>
+<Filename>8e11221e</Filename>
+<Title>read.madata Function</Title>
+<Label>read-madata</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>0e1c8565</Filename>
+<Title>fitmaanova Function</Title>
+<Label>fitmaanova</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>ecf31584</Filename>
+<Title>matest Function</Title>
+<Label>matest</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+<DocumentNode>
+<Filename>25b8af91</Filename>
+<Title>PairContrast Function</Title>
+<Label>pair-contrast</Label>
+<FullTextSearch>true</FullTextSearch>
+</DocumentNode>
+</DocumentNode>
+</DocumentNode>
+<Label Name="analysis">55f4aae5</Label>
+<Label Name="array-scatter-plot">9e9ed1b2</Label>
+<Label Name="design">a8eb6286</Label>
+<Label Name="export-ma-data-to-csv">3839db05</Label>
+<Label Name="export-r-commands">57973b71</Label>
+<Label Name="export-r-data">4b5a359e</Label>
+<Label Name="first-topic">1c60f495</Label>
+<Label Name="fit-anova">9bb7e965</Label>
+<Label Name="fitmaanova">0e1c8565</Label>
+<Label Name="gene-list">0b19dc61</Label>
+<Label Name="graphs">5adb6e94</Label>
+<Label Name="installation">963b9d50</Label>
+<Label Name="license">643f5712</Label>
+<Label Name="load-affy-data">b67c5ef0</Label>
+<Label Name="load-data">03add5f1</Label>
+<Label Name="load-tab-data">08181793</Label>
+<Label Name="matest">ecf31584</Label>
+<Label Name="pair-contrast">25b8af91</Label>
+<Label Name="r-docs">f77ba5a7</Label>
+<Label Name="r-terminal">c58bb1d7</Label>
+<Label Name="read-madata">8e11221e</Label>
+<Label Name="residual-plot">2f796f65</Label>
+<Label Name="save-open-projects">7e978c5a</Label>
+<Label Name="test-anova">9df05950</Label>
+<Label Name="test-results-table">622c152b</Label>
+<Label Name="tutorial">f55cf41f</Label>
+<Label Name="volcano-plot">0236361d</Label>
+</DocumentTree>
+<ImageLibrary>
+<Root>images</Root>
+<Image Name="add-genes-dialog.png">
+<Foundry>images</Foundry>
+<Timestamp>1263939154000</Timestamp>
+<Width>472</Width>
+<Height>233</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>98</Height.INTERN>
+</Image>
+<Image Name="affy-design-example.png">
+<Foundry>images</Foundry>
+<Timestamp>1263578120000</Timestamp>
+<Width>607</Width>
+<Height>470</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>154</Height.INTERN>
+</Image>
+<Image Name="array-scatter-plot.png">
+<Foundry>images</Foundry>
+<Timestamp>1263845036000</Timestamp>
+<Width>778</Width>
+<Height>778</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>200</Height.INTERN>
+</Image>
+<Image Name="back-16x16.png">
+<Foundry>images</Foundry>
+<Timestamp>1263225692000</Timestamp>
+<Width>16</Width>
+<Height>16</Height>
+</Image>
+<Image Name="data-preview.png">
+<Foundry>images</Foundry>
+<Timestamp>1263496795000</Timestamp>
+<Width>654</Width>
+<Height>564</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>172</Height.INTERN>
+</Image>
+<Image Name="design-preview.png">
+<Foundry>images</Foundry>
+<Timestamp>1263496647000</Timestamp>
+<Width>459</Width>
+<Height>405</Height>
+</Image>
+<Image Name="edit-columns-dialog.png">
+<Foundry>images</Foundry>
+<Timestamp>1263935496000</Timestamp>
+<Width>366</Width>
+<Height>207</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>113</Height.INTERN>
+</Image>
+<Image Name="edit-genes-dialog.png">
+<Foundry>images</Foundry>
+<Timestamp>1263939207000</Timestamp>
+<Width>389</Width>
+<Height>238</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>122</Height.INTERN>
+</Image>
+<Image Name="filter-sort-rows.png">
+<Foundry>images</Foundry>
+<Timestamp>1263935303000</Timestamp>
+<Width>777</Width>
+<Height>193</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>49</Height.INTERN>
+</Image>
+<Image Name="fit-maanova.png">
+<Foundry>images</Foundry>
+<Timestamp>1263914463000</Timestamp>
+<Width>768</Width>
+<Height>575</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>149</Height.INTERN>
+</Image>
+<Image Name="forward-16x16.png">
+<Foundry>images</Foundry>
+<Timestamp>1263225692000</Timestamp>
+<Width>16</Width>
+<Height>16</Height>
+</Image>
+<Image Name="matest1.png">
+<Foundry>images</Foundry>
+<Timestamp>1263920817000</Timestamp>
+<Width>794</Width>
+<Height>485</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>122</Height.INTERN>
+</Image>
+<Image Name="matest2.png">
+<Foundry>images</Foundry>
+<Timestamp>1263920957000</Timestamp>
+<Width>794</Width>
+<Height>485</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>122</Height.INTERN>
+</Image>
+<Image Name="matest3.png">
+<Foundry>images</Foundry>
+<Timestamp>1263921010000</Timestamp>
+<Width>794</Width>
+<Height>485</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>122</Height.INTERN>
+</Image>
+<Image Name="r-terminal.png">
+<Foundry>images</Foundry>
+<Timestamp>1263836323000</Timestamp>
+<Width>810</Width>
+<Height>305</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>75</Height.INTERN>
+</Image>
+<Image Name="read-affy-data.png">
+<Foundry>images</Foundry>
+<Timestamp>1266251486000</Timestamp>
+<Width>728</Width>
+<Height>458</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>125</Height.INTERN>
+</Image>
+<Image Name="read-tab-delimited-ma-data.png">
+<Foundry>images</Foundry>
+<Timestamp>1263585206000</Timestamp>
+<Width>712</Width>
+<Height>795</Height>
+<Width.INTERN>179</Width.INTERN>
+<Height.INTERN>200</Height.INTERN>
+</Image>
+<Image Name="residual-plot.png">
+<Foundry>images</Foundry>
+<Timestamp>1263845703000</Timestamp>
+<Width>775</Width>
+<Height>580</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>149</Height.INTERN>
+</Image>
+<Image Name="show-design-rt-click.png">
+<Foundry>images</Foundry>
+<Timestamp>1263494895000</Timestamp>
+<Width>489</Width>
+<Height>203</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>83</Height.INTERN>
+</Image>
+<Image Name="test-results-table.png">
+<Foundry>images</Foundry>
+<Timestamp>1263935194000</Timestamp>
+<Width>683</Width>
+<Height>554</Height>
+<Width.INTERN>200</Width.INTERN>
+<Height.INTERN>162</Height.INTERN>
+</Image>
+<Image Name="volcano-plot.png">
+<Foundry>images</Foundry>
+<Timestamp>1263845441000</Timestamp>
+<Width>777</Width>
+<Height>777</Height>
+<Width.INTERN>199</Width.INTERN>
+<Height.INTERN>200</Height.INTERN>
+</Image>
+<ThumbName Image="add-genes-dialog.png">af5a6903</ThumbName>
+<ThumbName Image="affy-design-example.png">d3fec817</ThumbName>
+<ThumbName Image="array-scatter-plot.png">8d8b0df0</ThumbName>
+<ThumbName Image="back-16x16.png">7003662d</ThumbName>
+<ThumbName Image="data-preview.png">ff909555</ThumbName>
+<ThumbName Image="design-preview.png">b899c6dc</ThumbName>
+<ThumbName Image="edit-columns-dialog.png">e64c41a4</ThumbName>
+<ThumbName Image="edit-genes-dialog.png">0b7385cd</ThumbName>
+<ThumbName Image="filter-sort-rows.png">0c63c5a5</ThumbName>
+<ThumbName Image="fit-maanova.png">e1572a16</ThumbName>
+<ThumbName Image="forward-16x16.png">bcfc052a</ThumbName>
+<ThumbName Image="matest1.png">587ca3e8</ThumbName>
+<ThumbName Image="matest2.png">1362cf1a</ThumbName>
+<ThumbName Image="matest3.png">0cd518fc</ThumbName>
+<ThumbName Image="r-terminal.png">89d41283</ThumbName>
+<ThumbName Image="read-affy-data.png">e6dbe629</ThumbName>
+<ThumbName Image="read-tab-delimited-ma-data.png">3c1eec2f</ThumbName>
+<ThumbName Image="residual-plot.png">30d1224d</ThumbName>
+<ThumbName Image="show-design-rt-click.png">07a35bfc</ThumbName>
+<ThumbName Image="test-results-table.png">2320e853</ThumbName>
+<ThumbName Image="volcano-plot.png">93d67cd7</ThumbName>
+<ThumbnailSize>100</ThumbnailSize>
+</ImageLibrary>
+</HelpSetMaker>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="date" content="20100405120624" />
+<!-- created with HelpSetMaker, ID=08181793 -->
+<title>Loading Tab-Delimited Microarray Data</title>
+</head>
+<body class="doc">
+<h1>Loading Tab-Delimited Microarray Data</h1>
+<h2>Input Files</h2>
+
+<p>J/maanova can load tab-delimited data and design files which are formatted as specified in the documentation for R/maanova's <a href="8e11221e.html">read.madata(...)</a> function.</p>
+<br/><p align="center">
+<img src="pics/read-tab-delimited-ma-data.png" width="712" height="795" /><br/>
+<em>Read Tab-Delimited Data Dialog</em></p><br/>
+
+<p>Use the <tt><b>Browse...</b></tt> buttons to select the data and design files to load. You can also use the <tt><b>Preview..</b></tt> button to inspect the files before loading them.</p>
+<br/><p align="center">
+<img src="pics/data-preview.png" width="654" height="564" /><br/>
+<em>Preview Data Dialog</em></p><br/>
+<h2>General Settings</h2>
+
+<p>The General Settings section has options that can be applied to the data whether it's a one-color or two-color experiment:
+<ul><li>
+<p><tt><b>Array Type</b></tt>: select "Two Color" if the experiment uses two color microarray data</p>
+</li><li>
+<p><tt><b>Probe ID Column</b></tt>: tell J/maanova which column in the data file contains the Probe ID's. If this option is not checked then the probe's row number will be used instead.</p>
+</li><li>
+<p><tt><b>First Intensity Column</b></tt>: set this value to the first column number in the data file that contains microarray intensity values</p>
+</li><li>
+<p><tt><b>Log2 Transform Intensity Values</b></tt>: select this option if the data has not yet been normalized and needs to be log transformed</p>
+</li></ul>
+</p>
+<h2>Two-Color Array Settings</h2>
+
+<p>These settings will only be enabled if <tt><b>Array Type</b></tt> in <tt><b>General Settings</b></tt> is set to <tt><b>Two Color</b></tt>.
+<ul><li>
+<p><tt><b>Data Includes Metarow and MetaColumn</b></tt>: this option should be selected only if the data file has columns which contain each probe[set]'s metarow and metacolumn</p>
+</li><li>
+<p><tt><b>Probe Metarow Column</b></tt>: the column number in the data file which contains probe[set] meta-row values (only enabled if the <tt><b>Data Includes Metarow and Metacolumn</b></tt> option is selected</p>
+</li><li>
+<p><tt><b>Probe Metacolumn Column</b></tt>: the column number in the data file which contains probe[set] meta-column values (only enabled if the <tt><b>Data Includes Metarow and Metacolumn</b></tt> option is selected</p>
+</li><li>
+<p><tt><b>Probe Row Column</b></tt>: the column number in the data file which contains probe[set] row values</p>
+</li><li>
+<p><tt><b>Probe Column Column</b></tt>: the column number in the data file which contains probe[set] column values</p>
+</li></ul>
+</p>
+</body>
+</html>

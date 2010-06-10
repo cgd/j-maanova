@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="date" content="20100405120624" />
+<!-- created with HelpSetMaker, ID=c58bb1d7 -->
+<title>Interacting With the R Terminal</title>
+</head>
+<body class="doc">
+<h1>Interacting With the R Terminal</h1>
+
+<p>The built-in R terminal allows a basic level of interaction with the R environment without leaving the R/maanova application.</p>
+<br/><p align="center">
+<img src="pics/r-terminal.png" width="810" height="305" /><br/>
+<em>R Terminal</em></p><br/>
+<h2>R Status</h2>
+
+<p>Many of the graphical interfaces that you can use in J/maanova are just front ends to R commands (Eg: see <a href="08181793.html">Loading Tab-Delimited Data</a>). These interfaces will show you a preview of the R command being built. When you "OK" your settings you will see the command printed to the R terminal at the bottom of the screen in blue text along with any resulting R output in black text. If the command entered is a long-running task (such as a test with permutations) the status bar will read "<tt><b>Evaluating R Command</b></tt>" until the command completes.</p>
+<h2>Entering R Commands</h2>
+
+<p>The <tt><b>Insert Comment or Command...</b></tt> button can be used to execute user supplied R commands. This command should be used with caution since it is possible to enter commands which will delete or corrupt data objects in your workspace. Also note that if you use a plot command you must render to a file based graphics device (such as <tt><b>png(...)</b></tt>) rather than the default device. Rendering to the default device will cause errors. See <tt><b>http://cran.r-project.org/doc/manuals/R-intro.html#Multiple-graphics-devices</b></tt> for introductory documentation on using graphics devices.</p>
+</body>
+</html>

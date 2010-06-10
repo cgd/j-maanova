@@ -1,0 +1,20 @@
+:title Graphs
+:label graphs
+
+This section contains information about the different graphs that you can plot with J/maanova. Note that all references to menu items in this help document refer to the graph's menu bar rather than the top-level J/maanova menu bar.
+
+:h2 General Graph Settings
+
+There are several settings that you can use which are common to most of the graphs you will use with J/maanova.
+
+:h3 Saving a Graph Image
+
+Use ::**File->Save Graph as Image...**:: to save the graph to a PNG file. PNG is a lossless bitmap format so the rendered result should exactly match the graph that you see on your screen. This means that if you want a higher resolution graph image you can resize the graph window to take up more space.
+
+:h3 Customizing Graph Labels
+
+You can edit the graph header or axis labels by using the ::**Tools->Configure Graph...**:: menu item.
+
+:h3 Zooming
+
+You can zoom in by "rubber-band" selecting an area of the graph to zoom into. To zoom out select ::**Tools->Zoom Out**:: which will cause the graph to zoom out to its initial size.

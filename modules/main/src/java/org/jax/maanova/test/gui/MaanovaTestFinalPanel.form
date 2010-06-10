@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="poolCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="verboseCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="criticalThresholdLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="performPermutationsCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="shufflingMethodLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="shufflingMethodComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="nameTextField" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="criticalThresholdSpinner" alignment="0" max="32767" attributes="1"/>
+                              <Component id="permutationCountSpinner" alignment="0" pref="83" max="32767" attributes="1"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="132" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="nameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="performPermutationsCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="permutationCountSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="criticalThresholdLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="criticalThresholdSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="shufflingMethodLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="shufflingMethodComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="poolCheckBox" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="verboseCheckBox" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="118" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="nameLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name Your Test Result:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="nameTextField">
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="performPermutationsCheckBox">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Perform Permutations"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="permutationCountSpinner">
+    </Component>
+    <Component class="javax.swing.JLabel" name="criticalThresholdLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Critical F-distribution Quantile:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="criticalThresholdSpinner">
+    </Component>
+    <Component class="javax.swing.JLabel" name="shufflingMethodLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Data Shuffling Method:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="shufflingMethodComboBox">
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="poolCheckBox">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Use Pooled Permutation F statistics"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="verboseCheckBox">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Print Verbose Output"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
