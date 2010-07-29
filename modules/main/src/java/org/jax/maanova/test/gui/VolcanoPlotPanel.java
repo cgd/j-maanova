@@ -900,7 +900,7 @@ public class VolcanoPlotPanel extends JPanel
             MaanovaTestStatisticSubtype testStatisticSubtype)
     {
         Double[] objXValues =
-            this.maanovaTestResult.getVolcanoPlotXAxisValues(plotIndex);
+            this.maanovaTestResult.getFoldChangeValues(plotIndex);
         Double[] objYValues =
             testStatistics.getValues(testStatisticSubtype, plotIndex);
         

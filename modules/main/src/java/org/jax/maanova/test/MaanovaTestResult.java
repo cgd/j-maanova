@@ -54,7 +54,7 @@ public class MaanovaTestResult extends RObject
      */
     private static final String R_CLASS_STRING = "matest";
     
-    private static final String VOLCANO_X_VALS_METHOD = "calVolcanoXval";
+    private static final String FOLD_CHANGE_VALS_METHOD = "calVolcanoXval";
     
     private static final String PROBESET_ID_COMPONENT = "$probeid";
 
@@ -137,18 +137,19 @@ public class MaanovaTestResult extends RObject
     }
     
     /**
-     * Get the x coordinates that should be used in a volcano plot. Note that
-     * the x-values should be the same no matter what statistic is chosen
+     * Get the fold change (x coordinates) that should be used in a
+     * volcano plot. Note that the x-values should be the same no matter what
+     * statistic is chosen
      * @param plotIndex
      *          the index of the plot (t-tests will have one plot per
      *          contrast row, f-tests will have a single plot)
      * @return
      *          the coordinates
      */
-    public Double[] getVolcanoPlotXAxisValues(int plotIndex)
+    public Double[] getFoldChangeValues(int plotIndex)
     {
-        RMethodInvocationCommand xValsMethod = new RMethodInvocationCommand(
-                VOLCANO_X_VALS_METHOD,
+        RMethodInvocationCommand fcValsMethod = new RMethodInvocationCommand(
+                FOLD_CHANGE_VALS_METHOD,
                 new RCommandParameter(this.getAccessorExpressionString()));
         
         final RCommand rCmd;
@@ -159,10 +160,10 @@ public class MaanovaTestResult extends RObject
                 // cbind does nothing if the arg is already a matrix and if it is a
                 // vector it turns the vector into a single column matrix. we need
                 // this because the f-test gets a vector
-                RMethodInvocationCommand vecXValsMethod = new RMethodInvocationCommand(
+                RMethodInvocationCommand vecFcValsMethod = new RMethodInvocationCommand(
                         "as.vector",
-                        new RCommandParameter(xValsMethod.getCommandText()));
-                rCmd = new SilentRCommand(vecXValsMethod);
+                        new RCommandParameter(fcValsMethod.getCommandText()));
+                rCmd = new SilentRCommand(vecFcValsMethod);
             }
             break;
             
@@ -171,14 +172,14 @@ public class MaanovaTestResult extends RObject
                 // cbind does nothing if the arg is already a matrix and if it is a
                 // vector it turns the vector into a single column matrix. we need
                 // this because the f-test gets a vector
-                RMethodInvocationCommand matXValsMethod = new RMethodInvocationCommand(
+                RMethodInvocationCommand matFcValsMethod = new RMethodInvocationCommand(
                         "cbind",
-                        new RCommandParameter(xValsMethod.getCommandText()));
+                        new RCommandParameter(fcValsMethod.getCommandText()));
                 
-                String indexedXVals = RUtilities.columnIndexExpression(
-                        matXValsMethod.getCommandText(),
+                String indexedFcVals = RUtilities.columnIndexExpression(
+                        matFcValsMethod.getCommandText(),
                         plotIndex);
-                rCmd = new SilentRCommand(indexedXVals);
+                rCmd = new SilentRCommand(indexedFcVals);
             }
             break;
             
