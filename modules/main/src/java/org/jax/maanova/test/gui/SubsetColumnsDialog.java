@@ -53,7 +53,7 @@ public class SubsetColumnsDialog extends JDialog
      */
     public SubsetColumnsDialog(Frame parent)
     {
-        super(parent, "Edit Columns", true);
+        super(parent, "Add/Remove Columns", true);
         this.initComponents();
         this.postGuiInit();
     }
@@ -64,7 +64,7 @@ public class SubsetColumnsDialog extends JDialog
      */
     public SubsetColumnsDialog(Dialog parent)
     {
-        super(parent, "Edit Columns", true);
+        super(parent, "Add/Remove Columns", true);
         this.initComponents();
         this.postGuiInit();
     }

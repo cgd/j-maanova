@@ -98,7 +98,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="subsetColumnsButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Edit Columns..."/>
+        <Property name="text" type="java.lang.String" value="Add/Remove Columns..."/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="resultsTableScrollPane">

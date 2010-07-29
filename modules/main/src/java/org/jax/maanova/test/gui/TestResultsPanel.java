@@ -873,7 +873,7 @@ public class TestResultsPanel extends JPanel
 
         filterSortRowsButton.setText("Filter/Sort Rows...");
 
-        subsetColumnsButton.setText("Edit Columns...");
+        subsetColumnsButton.setText("Add/Remove Columns...");
 
         resultsTableScrollPane.setViewportView(resultsTable);
 
