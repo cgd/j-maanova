@@ -41,6 +41,7 @@ public class PlotVarianceComponentsAction extends AbstractAction
     
     /**
      * constructor
+     * @param fitResult the fit resutl that this action will plot
      */
     public PlotVarianceComponentsAction(FitMaanovaResult fitResult)
     {
