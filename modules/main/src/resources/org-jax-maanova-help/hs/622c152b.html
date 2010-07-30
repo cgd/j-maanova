@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Test Results Table</title>
+</head>
+<body class="doc">
+<h1>Test Results Table</h1>
+
+<p>After <a href="9df05950.html">testing a term</a> you will want to inspect the test results using a <a href="0236361d.html">volcano plot</a> and a tabular view. To see a tabular view of test results you can either right click on a test result in your project tree and select <tt><b>Show Results Table for ...</b></tt> or you can select <tt><b>Analysis-&gt;Test Results Tables-&gt;...</b></tt> from J/maanova's main menu.</p>
+<br><p align="center">
+<img src="pics/test-results-table.png" width="683" height="554"><br>
+<em>Test Results Table</em></p><br>
+
+<p><tt><b>Test Number</b></tt>: this drop down will only appear in the case of a t-test where more than one contrasts were tested. Select the number of the contrast that you want to see test results for.</p>
+<h2>Filter/Sort Rows:</h2>
+
+<p>Click the <tt><b>Filter/Sort Rows</b></tt> button to filter and/or sort the table rows</p>
+<br><p align="center">
+<img src="pics/filter-sort-rows.png" width="777" height="193"><br>
+<em>Filter and Sort Dialog</em></p><br>
+
+<ul><li>
+<p><tt><b>Filter Where</b></tt> checking this option allows you to specify row filter criteria. Any rows that don't meet the specified criteria will not appear in the results table</p>
+</li><li>
+<p><tt><b>Filter By Gene List</b></tt>: this option is only enabled if the user has already created at least one gene list for the microarray experiment that corresponds to the test. If this option is selected then only genes which are a part of the selected gene list will be displayed in the results table.</p>
+</li><li>
+<p><tt><b>Sort Probesets By</b></tt>: allows you to select a statistic to sort the results table by</p>
+</li></ul>
+<h2>Edit Columns:</h2>
+
+<p>Select the <tt><b>Edit Columns</b></tt> button to remove columns from the results table. This can be helpful if the display is crowded by too many columns.</p>
+<br><p align="center">
+<img src="pics/edit-columns-dialog.png" width="366" height="207"><br>
+<em>Edit Columns Dialog</em></p><br>
+<h2>Other Controls:</h2>
+
+<ul><li>
+<p><tt><b>Total Row Count</b></tt>: displays the total number of rows in the table (after any filters are applied)</p>
+</li><li>
+<p><tt><b>Selected Row Count</b></tt>: displays the number of rows that the user has selected (see <tt><b>Show Volcano Plot</b></tt> and <tt><b>Add Selected Rows to List</b></tt> below)</p>
+</li><li>
+<p><tt><b>Export to CSV</b></tt>: exports the current table as a CSV file which can be opened by spreedsheet editors</p>
+</li><li>
+<p><tt><b>Show Volcano Plot</b></tt>: opens up a <a href="0236361d.html">volcano plot</a> for the relevant test results. Any selected rows will appear as red dots in the volcano plot.</p>
+</li><li>
+<p><tt><b>Add Selected Rows to List</b></tt>: adds the selected rows to a <a href="0b19dc61.html">gene list</a>.</p>
+</li></ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE map PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp Map Version 2.0//EN" "http://java.sun.com/products/javahelp/map_2_0.dtd">
+<map version="2.0">
+<mapID target="first-topic" url="1c60f495.html" />
+<mapID target="license" url="643f5712.html" />
+<mapID target="installation" url="963b9d50.html" />
+<mapID target="save-open-projects" url="7e978c5a.html" />
+<mapID target="export-r-commands" url="57973b71.html" />
+<mapID target="export-r-data" url="4b5a359e.html" />
+<mapID target="export-ma-data-to-csv" url="3839db05.html" />
+<mapID target="r-terminal" url="c58bb1d7.html" />
+<mapID target="load-data" url="03add5f1.html" />
+<mapID target="load-tab-data" url="08181793.html" />
+<mapID target="load-affy-data" url="b67c5ef0.html" />
+<mapID target="analysis" url="55f4aae5.html" />
+<mapID target="design" url="a8eb6286.html" />
+<mapID target="fit-anova" url="9bb7e965.html" />
+<mapID target="test-anova" url="9df05950.html" />
+<mapID target="test-results-table" url="622c152b.html" />
+<mapID target="gene-list" url="0b19dc61.html" />
+<mapID target="graphs" url="5adb6e94.html" />
+<mapID target="array-scatter-plot" url="9e9ed1b2.html" />
+<mapID target="residual-plot" url="2f796f65.html" />
+<mapID target="volcano-plot" url="0236361d.html" />
+<mapID target="r-docs" url="f77ba5a7.html" />
+<mapID target="read-madata" url="8e11221e.html" />
+<mapID target="fitmaanova" url="0e1c8565.html" />
+<mapID target="matest" url="ecf31584.html" />
+<mapID target="pair-contrast" url="25b8af91.html" />
+</map>

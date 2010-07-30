@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Fit ANOVA Model</title>
+</head>
+<body class="doc">
+<h1>Fit ANOVA Model</h1>
+
+<p>In order to fit an ANOVA model select the <tt><b>Analysis-&gt;Fit ANOVA Model...</b></tt> menu item which will show you a graphical interface to R/maanova's <a href="0e1c8565.html">fitmaanova(...)</a> function.</p>
+<br><p align="center">
+<img src="pics/fit-maanova.png" width="768" height="575"><br>
+<em>Model Fitting</em></p><br>
+<h2>Settings:</h2>
+
+<ul><li>
+<p><tt><b>Microarray Experiment</b></tt>: the experiment data to fit. See help documentation for loading <a href="08181793.html">tab-delimited data</a> or <a href="b67c5ef0.html">Affymetrix data</a>.</p>
+</li><li>
+<p><tt><b>Model Inputs</b></tt>: the model inputs are a list of terms from the experiment's design file.</p>
+</li><li>
+<p><tt><b>Model Terms</b></tt>: the model terms that will be fit. You can also indicate that a term is <tt><b>Random</b></tt> or <tt><b>Covariate</b></tt> by selecting the respective checkbox</p>
+</li><li>
+<p><tt><b>Add Term(s)</b></tt>: adds selected inputs to the <tt><b>Model Terms</b></tt> list as additive terms. This button will only be enabled if at least one input is selected.</p>
+</li><li>
+<p><tt><b>Add as Interactive Term</b></tt>: adds two selected inputs as an interactive model term.</p>
+</li><li>
+<p><tt><b>Append Interaction to Term</b></tt>: appending an interaction will create an interactive term by adding the selected input on the left to the selected additive term. The new interactive term will appear in the <tt><b>Model Terms</b></tt> list with a colon ':' separating the interacting terms.</p>
+</li><li>
+<p><tt><b>Remove Term</b></tt>: removes the selected term from the list of <tt><b>Model Terms</b></tt> to be fit</p>
+</li><li>
+<p><tt><b>Fit Method</b></tt>: determines if the fit is performed using the <tt><b>Maximum Liklihood (ML)</b></tt> or <tt><b>Restricted Maximum Likelihood (REML)</b></tt> algorithm</p>
+</li><li>
+<p><tt><b>Print Verbose Output During Fit</b></tt>: determines if verbose status messages will be printed to the R output window at the bottom of the screen</p>
+</li><li>
+<p><tt><b>Name Your Fit Result</b></tt>: the name to use for your fit result (this name will appear in your projects data tree)</p>
+</li></ul>
+</body>
+</html>

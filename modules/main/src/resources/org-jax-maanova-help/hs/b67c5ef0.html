@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Loading Affymetrix Microarray Data</title>
+</head>
+<body class="doc">
+<h1>Loading Affymetrix Microarray Data</h1>
+
+<p>J/maanova allows you to directly load and normalize CEL files via the <tt><b>File-&gt;Load Microarray Data-&gt;Load Affymetrix Microarray Data...</b></tt> menu item. This method uses the underlying <tt><b>affy</b></tt> R package and <a href="8e11221e.html">read.madata(...)</a> to perform the data load and normalization. Note that the values in the design file's Array column must match the file name of the CEL files as shown in the example screenshots below.</p>
+<br><p align="center">
+<img src="pics/read-affy-data.png" width="728" height="458"><br>
+<em>Load Affymetrix Data Dialog</em></p><br>
+
+<ul><li>
+<p><tt><b>CEL Files</b></tt>: a comma-separated list of CEL files that will be loaded. The easiest way to create this list is to use the <tt><b>Browse...</b></tt>. The browse dialog allows you to select multiple files at once. For example on Windows you can use CTRL+A to select all files in a directory or SHIFT+LEFT_CLICK to select a range of files.</p>
+</li><li>
+<p><tt><b>Experiment Design</b></tt>: the experiment design file should be a tab-delimited file. The values in the design file's leftmost column should match the CEL file names (if there is a header row then name this column "Array"). For more details about design file requirements see R/maanova's documentation for the <tt><b>read.madata(...)</b></tt> function. As an example here is a preview of a simple valid design file:</p>
+</li><li>
+<p><tt><b>CDF Package (Optional)</b></tt>: the CDF file determines which probes will be grouped together to form probesets in your CEL files. Typically you can leave this blank and the affy package will locate a suitable CDF file</p>
+</li></ul>
+<br><p align="center">
+<img src="pics/affy-design-example.png" width="607" height="470"><br>
+<em>An Example Design Preview</em></p><br>
+
+<ul><li>
+<p><tt><b>CEL Files are Compressed</b></tt>: check this box if the CEL files that you are loading are compressed</p>
+</li><li>
+<p><tt><b>Perform Quantile Normalization</b></tt>: checking this box tells the affy package to use quantile normalization on the microarray data</p>
+</li><li>
+<p><tt><b>Performa Background Correction</b></tt>: checking this box will tell the affy package to perform background correction on the microarray data</p>
+</li><li>
+<p><tt><b>Microarray Data Object Name</b></tt>: choose a name for the data object that is descriptive of the experiment that you are performing. This name will be used in the project tree to represent all of the data for this experiment.</p>
+</li></ul>
+</body>
+</html>

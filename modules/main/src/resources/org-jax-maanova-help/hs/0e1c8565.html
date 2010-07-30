@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>fitmaanova Function</title>
+</head>
+<body class="doc">
+<h1>fitmaanova Function</h1>
+
+<p>Fit ANOVA model for Micro Array experiment</p>
+<h2>Description</h2>
+
+<p>This is the function to fit the ANOVA model for Microarray experiment. Given the data and formula, this function fits the regression model for each gene and calculates the ANOVA estimates, variance components for random terms, fitted values, etc. For a mixed effect models, the output estimates will be BLUE and BLUP.</p>
+
+<p>All terms used in the formula should be corresponding to the factor names in designfile except "Spot" and "Label". "Spot" represents the spotting effect and "Label" represents the labeling effects. They are from the within slide technical replicates. If there is no replicated spots, These two terms cannot be fitted. Also these two terms cannot be fitted for one-dye system (e.g., Affymetrix arrays). (Note that Dye effect should not be fitted in one-dye system).</p>
+
+<p>A typical formula will be like "~Array+Dye+Sample", which means you want to fit Array, Dye and Sample effect in the ANOVA model. In this case, you need to have Array, Dye and Sample columns in your input design file. Make sure you have enough degree of freedom when making a model. Also you need to be careful about confounding problem.</p>
+
+<p>If you have multiple factors in your experiment, you can specify the main and interaction effect in the formula. At this time, only two-way interactions are allowed.</p>
+
+<p>When you have random or covariate effect they should be specified in the "random' and "covariate', and also in the formula.</p>
+
+<p>For most mixed effect models, Array should be treated as random factor. Sample should be treated as random if you have biological replicates. Note that the reference sample (0's in Sample) will always be treated as fixed even if you specify Sample as random.</p>
+
+<p>Note that the calculation could be very slow for mixed effect models. The computational time depends on the number of genes, number of arrays and the size of the random variables (dimension of Z matrix).</p>
+
+<p>Array specific covariate should be included in the design matrix, and gene specific covariate should be read by "covM' in read.madata(), and need to be specified in covariate term. Usage</p>
+
+<p><tt>fitmaanova(madata, formula, random= ~1, covariate = ~1, mamodel, inits20, method=c("REML","ML","MINQE-I","MINQE-UI", "noest"), verbose=TRUE, subCol=FALSE)</tt></p>
+<h2>Arguments</h2>
+
+<ul><li>
+<p>madata: An object of class madata. formula: The ANOVA model formula.</p>
+</li><li>
+<p>random: The formula for random terms. ~1 means only the residual is random (fixed model). Note that all random terms should be in the ANOVA model formula.</p>
+</li><li>
+<p>covariate: The formula for covariates. ~1 means no covariates. The array specific covariates should be numeric values in the design matrix, and the gene specific covariates should be read by covM in read.madata</p>
+</li><li>
+<p>mamodel: Inside arguments to save the calculation time. inits20: The initial value for variance components. This should be a matrix with number of rows equals to the number of genes and number of columns equals to the number of random terms in the model. Good initial values will greatly speed up the calculation. If it is not given, it will be calculated based on the corresponding fixed model.</p>
+</li><li>
+<p>method: The method used to solve the Mixed Model Equation. Available options includes: "ML" for maximum liklihood; "REML" for restricted maximum liklihood; "MINQE-I" and "MINQE-UI" are for minimum norm and "noest" for no estimate for variance component (use the initial value). Both "ML" and "REML" use method of scoring algorithm to solve MME iteratively. "noest" skips the iteration and will be significantly faster (but accurate). Default method is "REML". For details about fitting mixed effects models, read the "Fitting mixed Effects model" section.</p>
+</li><li>
+<p>verbose: A logical value to indicate whether to display some message for calculation progress.</p>
+</li><li>
+<p>subCol: A logical value to indicate whether subtracting column mean from the raw data or not. Default is not subtracting column mean but for two color array it automatically subtracts the column mean.</p>
+</li></ul>
+<h2>Value</h2>
+
+<p>It returns anova and anova.subcol. Depending on "subCol' option, one field may not contain any information. Still it needs two fields to calculate Fss test statistics. anova and anova.subcol contains the same following fields.
+<ul><li>
+<p>yhat: 	Fitted intensity value which has the same dimension as the input intensity data</p>
+</li><li>
+<p>S2: 	Variance components for the random terms. It is a matrix with number of rows equals to the number of genes and number of columns equals to the number of random terms. Note that for fixed effect model, S2 is a one column vector for error's variance.</p>
+</li><li>
+<p>G: 	Gene effects. A vector with the same length as the number of genes.</p>
+</li><li>
+<p>reference: 	The estimates for reference sample. If there is no reference sample specified in the design, this field will be absent in the output object.</p>
+</li><li>
+<p>S2.level: 	A list of strings to indicate the order of the S2 field. Note that the last column of S2 is always the error's variance. S2.level is only for the non-error terms. For example, if there are three columns in S2 and S2.level is c("Strain", "Diet"), then the three columns of S2 correspond to the variances of Strain, Diet and error respectively for each gene.</p>
+</li><li>
+<p>Others: 	Estimates (or BLUE/BLUP for mixed effect model) for the terms in model. There will be XXX.level field for each term representing the order of the estimates (similar to S2.level).</p>
+</li><li>
+<p>flag: 	A vector to indicate whether there is bad spot for this gene. 0 means no bad spot and 1 means has bad spot. If there is no flag information in input data, this field will not be available.</p>
+</li><li>
+<p>model: 	The model object used for this fitting. Fitting mixed Effects model</p>
+</li></ul>
+</p>
+
+<p>Fitting mixed effects models needs a lot of computation. A good starting value for the variances is very important. This function first treats all random factors as fixed and fits a fixed effects model. Then variances for random factors are calculated and used as the initial values for mixed effects model fitting.</p>
+
+<p>There are several methods available for fitting the mixed effects model. "noest" does not really fit the mixed effects model. It takes the initial variance and solve mixed model equations to get the estimates (BLUE and BLUP). "MINQE-I" and "MINQE-UI" are based on minimum norm unbiased estimators. It is can be thought as a first iterate solution of "ML" and "REML", respectively. "ML" and "REML" are based on maximum likelihood and restricted maximum likelihood. Both of them need to be solved iteratively so they are very slow to compute. For "ML" and "REML", a MINQUE estimates is used as the starting value. "Method of scoring" is used as the iteratively algorithm to solve ML and REML. "Method of scoring" algorithm is similar to New-Raphson method except that it uses the expected value of Hessian (second derivative matrix of the objective function) instead of Hessian itself. Method of scoring is more robust to poor starting values and the Hessian is easier to calculate than Newton-Raphson.</p>
+
+<p>For more mathematical details please read Searle et al.</p>
+<h2>Author(s)</h2>
+
+<p>Hao Wu</p>
+<h2>References</h2>
+
+<p>Kerr and Churchill(2001), Statistical design and the analysis of gene expression microarrays, Genetical Research, 77:123-128.</p>
+
+<p>Kerr, Martin and Churchill(2000), Analysis of variance for gene expression microarray data, Journal of Computational Biology, 7:819-837.</p>
+
+<p>Searle, Casella and McCulloch, Variance Components, John Wiley and sons, Inc.</p>
+<h2>Examples</h2>
+
+<p><tt># load in abf1 data</tt></p>
+
+<p><tt>data(abf1)</tt></p>
+
+<p><tt># fit model with random effect</tt></p>
+
+<p><tt>fit.full.mix &lt;- fitmaanova(abf1, formula = ~Strain+Sample,     random = ~Sample)</tt></p>
+
+<p><tt># this is to explain the usage of including covariate variable.</tt></p>
+
+<p><tt># .CEL file is not included in the package, thus use can not use this. </tt></p>
+
+<p><tt># array specific covariate : add it to the design matrix </tt></p>
+
+<p><tt>beforeRma &lt;- ReadAffy() # suppose there are 18 arrays.</tt></p>
+
+<p><tt>rmaData &lt;- rma(beforeRma)</tt></p>
+
+<p><tt>datafile &lt;- exprs(rmaData)</tt></p>
+
+<p><tt>design.table=data.frame(Array=row.names(pData(beforeRma) ))</tt></p>
+
+<p><tt>Strain = rep(c('Aj', 'B6', 'B6xAJ'), each=6) </tt></p>
+
+<p><tt>Sample = rep(c(1:9), each=2) </tt></p>
+
+<p><tt>Cov1 = sample(1:100,18) # this is artificial example </tt></p>
+
+<p><tt>designfile.cov1 = cbind(design.table, Strain, Sample,Cov1) </tt></p>
+
+<p><tt>data.cov1=read.madata(datafile, designfile=designfile.cov1) </tt></p>
+
+<p><tt>fit.cov1 = fitmaanova(data.cov1,formula = ~Strain+Sample+Cov1, covariate = ~ Cov1) </tt></p>
+
+<p><tt># gene specific covariate - make artificial "covM' matrix </tt></p>
+
+<p><tt>covm = matrix(rnorm(length(datafile)), nrow=nrow(datafile)) </tt></p>
+
+<p><tt>designfile.cov2 = cbind(design.table, Strain, Sample) </tt></p>
+
+<p><tt>data.cov2=read.madata(datafile, designfile=designfile.cov2, covM=covm) </tt></p>
+
+<p><tt>fit.cov2 = fitmaanova(data.cov2,formula = ~Strain+Sample+covM, covariate = ~ covM)</tt></p>
+</body>
+</html>

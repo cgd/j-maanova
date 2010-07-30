@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Test ANOVA Model</title>
+</head>
+<body class="doc">
+<h1>Test ANOVA Model</h1>
+
+<p>After you <a href="9bb7e965.html">fit a model</a> you can test model terms. In order to test a term start by selecting <tt><b>Analysis-&gt;Test ANOVA Model...</b></tt> which displays a graphical interface to R/maanova's <a href="ecf31584.html">matest(...)</a> function.</p>
+<h2>Initial Settings: Fit, Test Type, Method and Term to Test</h2>
+<br><p align="center">
+<img src="pics/matest1.png" width="794" height="485"><br>
+<em>Initial Settings Panel</em></p><br>
+
+<ul><li>
+<p><tt><b>Experiment and Fit</b></tt>: select the <a href="9bb7e965.html">model fit</a> that we should test</p>
+</li><li>
+<p><tt><b>Test Type</b></tt>: the type of test to perform (t-test or F-test)</p>
+</li><li>
+<p><tt><b>Mehod</b></tt>: determines if a <tt><b>Restricted Maximum Liklihood (REML)</b></tt> or <tt><b>Maximum Liklihood (ML)</b></tt> algorithm is used</p>
+</li><li>
+<p><tt><b>Term(s) to Test</b></tt>: select one or more terms to test</p>
+</li></ul>
+<h2>Contrast Matrix:</h2>
+
+<p>The contrast matrix panel will only appear if you set the <tt><b>Test Type</b></tt> to t-test in the initial settings panel.</p>
+<br><p align="center">
+<img src="pics/matest2.png" width="794" height="485"><br>
+<em>Contrast Matrix Panel</em></p><br>
+
+<ul><li>
+<p><tt><b>Test All Pairwise Contrasts</b></tt>: selecting this option tells J/maanova to test all pairwise contrasts (this saves you the work of specifying this contrast). The number of tests for this option will be a function of the number of levels in the test term: <b>num_levels * (num_levels - 1) / 2</b></p>
+</li><li>
+<p><tt><b>Test With Custom Contrast Matrix</b></tt>: this option allows you to specify a custom contrast matrix where each row of the matrix specifies a new contrast to test. To add a new test row click the <tt><b>Add Test</b></tt> button and to remove a test row click the <tt><b>Remove Test</b></tt> button</p>
+</li></ul>
+<h2>Final Panel:</h2>
+<br><p align="center">
+<img src="pics/matest3.png" width="794" height="485"><br>
+<em>Final Panel</em></p><br>
+
+<ul><li>
+<p><tt><b>Name Your Test Result</b></tt>: the name to use for test results. This name will appear in your projects data tree</p>
+</li><li>
+<p><tt><b>Perform Permutations</b></tt>: select this checkbox and enter a permutation count if you want your test to include permutation p-values. Please note that a high permutation count can cause your test to run for a very long time. You should start with a small number (or no permutations at all) to get a feel for how much time it takes before running many permutations.
+<ul><li>
+<p><tt><b>Critical F-distribution Quantile</b></tt>: only enabled for permutations. Quantile of F-distribution used to get a subset to calculate p-value (ranges from 0.0 to 1.0)</p>
+</li><li>
+<p><tt><b>Data Shuffling Method</b></tt>: only enabled for permutations. Select <tt><b>Sample</b></tt> shuffling or <tt><b>Residual</b></tt> shuffling</p>
+</li><li>
+<p><tt><b>Use Pooled Permutation F statistics</b></tt>: determines whether J/maanova should use pooled permutation F values to calculate p-values</p>
+</li></ul>
+</p>
+</li><li>
+<p><tt><b>Print Verbose Output</b></tt>: determines if verbose output will be printed to the terminal window at the bottom of the screen while the test is being performed</p>
+</li></ul>
+</body>
+</html>

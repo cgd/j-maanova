@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<toc version="2.0">
+<tocitem text="J/maanova 1.0.0" target="first-topic">
+<tocitem text="Copyright and License" target="license" />
+<tocitem text="Installation and Uninstallation" target="installation" />
+<tocitem text="Saving and Opening Projects" target="save-open-projects" />
+<tocitem text="Exporting R Commands" target="export-r-commands" />
+<tocitem text="Exporting R Data" target="export-r-data" />
+<tocitem text="Exporting Microarray Data to CSV" target="export-ma-data-to-csv" />
+<tocitem text="Interacting With the R Terminal" target="r-terminal" />
+<tocitem text="Loading Microarray Data" target="load-data">
+<tocitem text="Loading Tab-Delimited Microarray Data" target="load-tab-data" />
+<tocitem text="Loading Affymetrix Microarray Data" target="load-affy-data" />
+</tocitem>
+<tocitem text="Analysis" target="analysis">
+<tocitem text="Show Experiment Design" target="design" />
+<tocitem text="Fit ANOVA Model" target="fit-anova" />
+<tocitem text="Test ANOVA Model" target="test-anova" />
+<tocitem text="Test Results Table" target="test-results-table" />
+<tocitem text="Gene Lists" target="gene-list" />
+</tocitem>
+<tocitem text="Graphs" target="graphs">
+<tocitem text="Array Intensity Scatter Plot" target="array-scatter-plot" />
+<tocitem text="Plot Residuals vs. Estimates" target="residual-plot" />
+<tocitem text="Volcano Plot" target="volcano-plot" />
+</tocitem>
+<tocitem text="R Documentation" target="r-docs">
+<tocitem text="read.madata Function" target="read-madata" />
+<tocitem text="fitmaanova Function" target="fitmaanova" />
+<tocitem text="matest Function" target="matest" />
+<tocitem text="PairContrast Function" target="pair-contrast" />
+</tocitem>
+</tocitem>
+</toc>
