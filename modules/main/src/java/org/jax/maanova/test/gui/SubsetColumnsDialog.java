@@ -109,27 +109,27 @@ public class SubsetColumnsDialog extends JDialog
     }
 
     /**
-     * Setter for the test statistics that the user can [en/dis]able
-     * @param testStatistics the testStatistics to set
+     * Setter for the statistics that the user can [en/dis]able
+     * @param statistics the testStatistics to set
      */
-    public void setTestStatistics(List<TestStatisticItem> testStatistics)
+    public void setStatistics(List<StatisticItem> statistics)
     {
         this.columnSelectionModel.setRowCount(0);
-        for(TestStatisticItem stat: testStatistics)
+        for(StatisticItem stat: statistics)
         {
             this.columnSelectionModel.addRow(new Object[] {Boolean.TRUE, stat});
         }
     }
     
     /**
-     * Get the list of test statistics that the user selected
+     * Get the list of statistics that the user selected
      * @return  the list
      */
-    public List<TestStatisticItem> getSelectedTestStatistics()
+    public List<StatisticItem> getSelectedStatistics()
     {
         int rowCount = this.columnSelectionModel.getRowCount();
-        List<TestStatisticItem> selectedStats =
-            new ArrayList<TestStatisticItem>(rowCount);
+        List<StatisticItem> selectedStats =
+            new ArrayList<StatisticItem>(rowCount);
         for(int row = 0; row < rowCount; row++)
         {
             Boolean selected = (Boolean)this.columnSelectionModel.getValueAt(
@@ -137,8 +137,8 @@ public class SubsetColumnsDialog extends JDialog
                     0);
             if(selected)
             {
-                TestStatisticItem currStat =
-                    (TestStatisticItem)this.columnSelectionModel.getValueAt(row, 1);
+                StatisticItem currStat =
+                    (StatisticItem)this.columnSelectionModel.getValueAt(row, 1);
                 selectedStats.add(currStat);
             }
         }

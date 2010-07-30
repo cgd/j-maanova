@@ -45,15 +45,15 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="sortTestStatComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="sortStatComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="filterTestStatComboBox" min="-2" max="-2" attributes="0"/>
+                          <Component id="filterStatComboBox" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="filterSpinner" min="-2" pref="86" max="-2" attributes="0"/>
                       </Group>
                       <Component id="filterByGeneListComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -63,7 +63,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="filterCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="filterTestStatComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="filterStatComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="filterSpinner" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -74,7 +74,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="sortCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="sortTestStatComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="sortStatComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -87,7 +87,7 @@
             <Property name="text" type="java.lang.String" value="Filter Where"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="filterTestStatComboBox">
+        <Component class="javax.swing.JComboBox" name="filterStatComboBox">
         </Component>
         <Component class="javax.swing.JSpinner" name="filterSpinner">
         </Component>
@@ -103,7 +103,7 @@
             <Property name="text" type="java.lang.String" value="Sort Probesets By"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="sortTestStatComboBox">
+        <Component class="javax.swing.JComboBox" name="sortStatComboBox">
         </Component>
       </SubComponents>
     </Container>

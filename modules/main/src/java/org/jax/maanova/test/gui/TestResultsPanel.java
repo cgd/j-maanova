@@ -274,7 +274,7 @@ public class TestResultsPanel extends JPanel
 
     private void saveGeneList()
     {
-        List<TestStatisticItem> headerItems = this.getSelectedTestStatistics();
+        List<StatisticItem> headerItems = this.getSelectedStatistics();
         ProbesetRow[] matrix = this.getSortedFilteredMatrix(headerItems);
         
         List<String> genes = new ArrayList<String>();
@@ -352,8 +352,8 @@ public class TestResultsPanel extends JPanel
                     FlatFileWriter writer = new FlatFileWriter(
                             new BufferedWriter(new FileWriter(selectedFile)),
                             CommonFlatFileFormat.CSV_UNIX);
-                    List<TestStatisticItem> headerItems =
-                        this.getSelectedTestStatistics();
+                    List<StatisticItem> headerItems =
+                        this.getSelectedStatistics();
                     String[] headerStrings = new String[headerItems.size() + 1];
                     headerStrings[0] = PROBESET_ID_HEADER_STRING;
                     for(int colIndex = 1; colIndex < headerStrings.length; colIndex++)
@@ -441,8 +441,7 @@ public class TestResultsPanel extends JPanel
             }
             this.subsetColumnsDialog.pack();
             
-            this.subsetColumnsDialog.setTestStatistics(
-                    this.getAllTestStatistics());
+            this.subsetColumnsDialog.setStatistics(this.getAllStatistics());
             
             // when the window is made invisible that means it
             // has been closed and we should update the table to take into
@@ -499,8 +498,7 @@ public class TestResultsPanel extends JPanel
             }
             this.filterSortDialog.pack();
             
-            this.filterSortDialog.setTestStatistics(
-                    this.getAllTestStatistics());
+            this.filterSortDialog.setStatistics(this.getAllStatistics());
             
             // when the window is made invisible that means it
             // has been closed and we should update the table to take into
@@ -541,7 +539,7 @@ public class TestResultsPanel extends JPanel
     {
         this.resultsTableModel.setRowCount(0);
         
-        List<TestStatisticItem> selectedStats = this.getSelectedTestStatistics();
+        List<StatisticItem> selectedStats = this.getSelectedStatistics();
         {
             Vector<Object> headerStrings = new Vector<Object>(selectedStats.size() + 1);
             headerStrings.add(PROBESET_ID_HEADER_STRING);
@@ -567,14 +565,14 @@ public class TestResultsPanel extends JPanel
         this.selectedRowCountTextField.setText("0");
     }
     
-    private ProbesetRow[] getSortedFilteredMatrix(List<TestStatisticItem> selectedStats)
+    private ProbesetRow[] getSortedFilteredMatrix(List<StatisticItem> selectedStats)
     {
         ProbesetRow[] statsMatrix = this.getStatisticsMatrix(selectedStats);
         if(this.filterSortDialog != null)
         {
             if(this.filterSortDialog.isFilteringOn())
             {
-                TestStatisticItem filterStat =
+                StatisticItem filterStat =
                     this.filterSortDialog.getSelectedFilterStatistic();
                 double filterThreshold =
                     this.filterSortDialog.getSelectedFilterThreshold();
@@ -588,7 +586,7 @@ public class TestResultsPanel extends JPanel
             
             if(this.filterSortDialog.isSortingOn())
             {
-                TestStatisticItem sortStat =
+                StatisticItem sortStat =
                     this.filterSortDialog.getSelectedSortStatistic();
                 statsMatrix = this.sortMatrix(
                         selectedStats,
@@ -602,7 +600,7 @@ public class TestResultsPanel extends JPanel
     
     private void showVolcanoPlot()
     {
-        List<TestStatisticItem> testStats = this.getSelectedTestStatistics();
+        List<StatisticItem> testStats = this.getSelectedStatistics();
         
         final int[] selectedRowIndices = this.getSelectedRowIndices();
         final int[] selectedGeneIndices = new int[selectedRowIndices.length];
@@ -638,9 +636,9 @@ public class TestResultsPanel extends JPanel
     }
     
     private ProbesetRow[] sortMatrix(
-            List<TestStatisticItem> matrixHeader,
+            List<StatisticItem> matrixHeader,
             final ProbesetRow[] statsMatrix,
-            final TestStatisticItem sortStat)
+            final StatisticItem sortStat)
     {
         final int sortColIndex = matrixHeader.indexOf(sortStat);
         if(sortColIndex == -1)
@@ -657,9 +655,8 @@ public class TestResultsPanel extends JPanel
         }
         else
         {
-            final MaanovaTestStatisticSubtype statisticSubtype =
-                sortStat.getTestStatisticSubtype();
-            
+            final boolean reverseSort = requiresReverseOrdering(sortStat);
+            final boolean takeAbsValue = sortStat instanceof FoldChangeStatisticItem;
             Comparator<ProbesetRow> sortComparator = new Comparator<ProbesetRow>()
             {
                 /**
@@ -667,23 +664,50 @@ public class TestResultsPanel extends JPanel
                  */
                 public int compare(ProbesetRow row1, ProbesetRow row2)
                 {
-                    int comp = ObjectUtil.compare(
-                            row1.getValues()[sortColIndex],
-                            row2.getValues()[sortColIndex]);
-                    switch(statisticSubtype)
+                    Double val1 = row1.getValues()[sortColIndex];
+                    if(takeAbsValue && val1 != null && val1.doubleValue() < 0.0)
                     {
-                        // sort descending for FObs
-                        case F_OBSERVED: return -comp;
-                        
-                        // sort ascending for everything else
-                        default: return comp;
+                        val1 = new Double(-val1.doubleValue());
                     }
+                    
+                    Double val2 = row2.getValues()[sortColIndex];
+                    if(takeAbsValue && val2 != null && val2.doubleValue() < 0.0)
+                    {
+                        val2 = new Double(-val2.doubleValue());
+                    }
+                    
+                    int comp = ObjectUtil.compare(val1, val2);
+                    return reverseSort ? -comp : comp;
                 }
             };
             
             Arrays.sort(statsMatrix, sortComparator);
             
             return statsMatrix;
+        }
+    }
+    
+    private boolean requiresReverseOrdering(StatisticItem statisticItem)
+    {
+        if(statisticItem instanceof FoldChangeStatisticItem)
+        {
+            return true;
+        }
+        else
+        {
+            TestStatisticItem statisticTestItem = (TestStatisticItem)statisticItem;
+            switch(statisticTestItem.getTestStatisticSubtype())
+            {
+                case F_OBSERVED:
+                {
+                    return true;
+                }
+                
+                default:
+                {
+                    return false;
+                }
+            }
         }
     }
 
@@ -701,9 +725,9 @@ public class TestResultsPanel extends JPanel
      *          the filtered array
      */
     private ProbesetRow[] filterMatrixByThreshold(
-            List<TestStatisticItem> matrixHeader,
+            List<StatisticItem> matrixHeader,
             final ProbesetRow[] statsMatrix,
-            final TestStatisticItem filterStat,
+            final StatisticItem filterStat,
             final double filterThreshold)
     {
         int filterColIndex = matrixHeader.indexOf(filterStat);
@@ -723,35 +747,35 @@ public class TestResultsPanel extends JPanel
         {
             List<ProbesetRow> filteredList = new ArrayList<ProbesetRow>();
             
-            final Condition<Double> filterCond;
-            switch(filterStat.getTestStatisticSubtype())
+            final boolean takeAbsValue = filterStat instanceof FoldChangeStatisticItem;
+            final boolean reverseOrder = this.requiresReverseOrdering(filterStat);
+            final Condition<Double> filterCond = new Condition<Double>()
             {
-                // in the case of F Obs we want our filter to be >=
-                case F_OBSERVED:
+                public boolean test(Double value)
                 {
-                    filterCond = new Condition<Double>()
+                    if(value == null)
                     {
-                        public boolean test(Double value)
-                        {
-                            return value != null && value >= filterThreshold;
-                        }
-                    };
-                }
-                break;
-                
-                // for everything else we want the filter to be <=
-                default:
-                {
-                    filterCond = new Condition<Double>()
+                        return false;
+                    }
+                    else
                     {
-                        public boolean test(Double value)
+                        double dblVal = value.doubleValue();
+                        if(takeAbsValue)
                         {
-                            return value != null && value <= filterThreshold;
+                            dblVal = Math.abs(dblVal);
                         }
-                    };
+                        
+                        if(reverseOrder)
+                        {
+                            return dblVal >= filterThreshold;
+                        }
+                        else
+                        {
+                            return dblVal <= filterThreshold;
+                        }
+                    }
                 }
-                break;
-            }
+            };
             
             // loop through everything only keeping the values that pass
             // through the filter
@@ -775,18 +799,27 @@ public class TestResultsPanel extends JPanel
      * @return
      *          the matrix
      */
-    private ProbesetRow[] getStatisticsMatrix(List<TestStatisticItem> testStatisticsItems)
+    private ProbesetRow[] getStatisticsMatrix(List<StatisticItem> testStatisticsItems)
     {
         Double[][] matrix = new Double[testStatisticsItems.size()][];
         
         for(int i = 0; i < matrix.length; i++)
         {
-            TestStatisticItem currStatItem = testStatisticsItems.get(i);
-            MaanovaTestStatistics stats = this.testResult.getStatistics(
-                    currStatItem.getTestStatisticType());
-            matrix[i] = stats.getValues(
-                    currStatItem.getTestStatisticSubtype(),
-                    this.testNumberComboBox.getSelectedIndex());
+            StatisticItem currStatItem = testStatisticsItems.get(i);
+            if(currStatItem instanceof FoldChangeStatisticItem)
+            {
+                matrix[i] = this.testResult.getFoldChangeValues(
+                        this.testNumberComboBox.getSelectedIndex());
+            }
+            else
+            {
+                TestStatisticItem currTestStatItem = (TestStatisticItem)currStatItem;
+                MaanovaTestStatistics stats = this.testResult.getStatistics(
+                        currTestStatItem.getTestStatisticType());
+                matrix[i] = stats.getValues(
+                        currTestStatItem.getTestStatisticSubtype(),
+                        this.testNumberComboBox.getSelectedIndex());
+            }
         }
         
         // transpose the transpose so that data rows are together
@@ -811,21 +844,22 @@ public class TestResultsPanel extends JPanel
      * Get selected test statistics
      * @return  the selected test statistics
      */
-    private List<TestStatisticItem> getSelectedTestStatistics()
+    private List<StatisticItem> getSelectedStatistics()
     {
         if(this.subsetColumnsDialog == null)
         {
-            return this.getAllTestStatistics();
+            return this.getAllStatistics();
         }
         else
         {
-            return this.subsetColumnsDialog.getSelectedTestStatistics();
+            return this.subsetColumnsDialog.getSelectedStatistics();
         }
     }
     
-    private List<TestStatisticItem> getAllTestStatistics()
+    private List<StatisticItem> getAllStatistics()
     {
-        List<TestStatisticItem> testStats = new ArrayList<TestStatisticItem>();
+        List<StatisticItem> stats = new ArrayList<StatisticItem>();
+        stats.add(new FoldChangeStatisticItem());
         
         for(MaanovaTestStatisticType currType: MaanovaTestStatisticType.values())
         {
@@ -834,14 +868,14 @@ public class TestResultsPanel extends JPanel
                 MaanovaTestStatistics currStats = this.testResult.getStatistics(currType);
                 if(currStats.hasTestStatistic(currSubtype))
                 {
-                    testStats.add(new TestStatisticItem(
+                    stats.add(new TestStatisticItem(
                             currType,
                             currSubtype));
                 }
             }
         }
         
-        return testStats;
+        return stats;
     }
     
     /**

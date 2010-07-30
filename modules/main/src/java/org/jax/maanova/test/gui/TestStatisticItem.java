@@ -26,38 +26,14 @@ import org.jax.maanova.test.MaanovaTestStatisticType;
 /**
  * @author <A HREF="mailto:keith.sheppard@jax.org">Keith Sheppard</A>
  */
-public class TestStatisticItem
+public class TestStatisticItem extends StatisticItem
 {
-    /**
-     * What text formatting should be used in the combo box
-     * @author <A HREF="mailto:keith.sheppard@jax.org">Keith Sheppard</A>
-     */
-    public enum Formatting
-    {
-        /**
-         * Nothing special. do something like "Fs: Nominal P-Values"
-         */
-        PLAIN,
-        
-        /**
-         * do something like "Fs: Nominal P-Values Less Than"
-         */
-        FILTER,
-        
-        /**
-         * do something like "Fs: Nominal P-Values Ascending"
-         */
-        SORT
-    }
-    
     private final MaanovaTestStatisticType testStatisticType;
     
     private final MaanovaTestStatisticSubtype testStatisticSubtype;
     
-    private final Formatting formatting;
-
     /**
-     * Constructor with formatting set to {@link Formatting#PLAIN}
+     * Constructor with formatting set to {@link StatisticItem.Formatting#PLAIN}
      * @param testStatisticType
      *          the type of test statistic (Fs, F)
      * @param testStatisticSubtype
@@ -84,9 +60,21 @@ public class TestStatisticItem
             MaanovaTestStatisticSubtype testStatisticSubtype,
             Formatting formatting)
     {
+        super(formatting);
         this.testStatisticType = testStatisticType;
         this.testStatisticSubtype = testStatisticSubtype;
-        this.formatting = formatting;
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public StatisticItem copyWithNewFormatting(Formatting formatting)
+    {
+        return new TestStatisticItem(
+                this.testStatisticType,
+                this.testStatisticSubtype,
+                formatting);
     }
     
     /**
@@ -105,15 +93,6 @@ public class TestStatisticItem
     public MaanovaTestStatisticType getTestStatisticType()
     {
         return this.testStatisticType;
-    }
-    
-    /**
-     * Getter for the formatting that should be used by {@link #toString()}
-     * @return the formatting
-     */
-    public Formatting getFormatting()
-    {
-        return this.formatting;
     }
     
     /**
@@ -147,7 +126,7 @@ public class TestStatisticItem
         sb.append(": ");
         sb.append(this.testStatisticSubtype.toString());
         
-        switch(this.formatting)
+        switch(this.getFormatting())
         {
             case PLAIN:
             {
@@ -195,7 +174,7 @@ public class TestStatisticItem
             
             default: throw new IllegalStateException(
                     "Internal error: unexpected formatting type: " +
-                    this.formatting);
+                    this.getFormatting());
         }
         
         return sb.toString();

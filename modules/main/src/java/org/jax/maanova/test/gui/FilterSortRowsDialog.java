@@ -38,7 +38,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.SwingUtilities;
 
 import org.jax.maanova.test.MaanovaTestResult;
-import org.jax.maanova.test.gui.TestStatisticItem.Formatting;
+import org.jax.maanova.test.gui.StatisticItem.Formatting;
 
 /**
  * Dialog for filtering and sorting test results rows
@@ -51,12 +51,12 @@ public class FilterSortRowsDialog extends JDialog
      */
     private static final long serialVersionUID = 1794321535677198447L;
     
-    private final Map<TestStatisticItem, SpinnerNumberModel> filterModels =
-        new HashMap<TestStatisticItem, SpinnerNumberModel>();
+    private final Map<StatisticItem, SpinnerNumberModel> filterModels =
+        new HashMap<StatisticItem, SpinnerNumberModel>();
     
-    private DefaultComboBoxModel filterTestStatModel;
+    private DefaultComboBoxModel filterStatModel;
     
-    private DefaultComboBoxModel sortTestStatModel;
+    private DefaultComboBoxModel sortStatModel;
 
     private final MaanovaTestResult testResult;
 
@@ -93,13 +93,13 @@ public class FilterSortRowsDialog extends JDialog
      */
     private void postGuiInit()
     {
-        this.filterTestStatModel = new DefaultComboBoxModel();
-        this.sortTestStatModel = new DefaultComboBoxModel();
+        this.filterStatModel = new DefaultComboBoxModel();
+        this.sortStatModel = new DefaultComboBoxModel();
         
-        this.filterTestStatComboBox.setModel(this.filterTestStatModel);
-        this.sortTestStatComboBox.setModel(this.sortTestStatModel);
+        this.filterStatComboBox.setModel(this.filterStatModel);
+        this.sortStatComboBox.setModel(this.sortStatModel);
         
-        this.filterTestStatComboBox.addItemListener(new ItemListener()
+        this.filterStatComboBox.addItemListener(new ItemListener()
         {
             /**
              * {@inheritDoc}
@@ -189,11 +189,11 @@ public class FilterSortRowsDialog extends JDialog
     private void refreshGUI()
     {
         boolean filterSelected = this.filterCheckBox.isSelected();
-        this.filterTestStatComboBox.setEnabled(filterSelected);
+        this.filterStatComboBox.setEnabled(filterSelected);
         this.filterSpinner.setEnabled(filterSelected);
         
         boolean sortSelected = this.sortCheckBox.isSelected();
-        this.sortTestStatComboBox.setEnabled(sortSelected);
+        this.sortStatComboBox.setEnabled(sortSelected);
     }
     
     /**
@@ -210,9 +210,9 @@ public class FilterSortRowsDialog extends JDialog
      * is true
      * @return  the statistic
      */
-    public TestStatisticItem getSelectedFilterStatistic()
+    public StatisticItem getSelectedFilterStatistic()
     {
-        return (TestStatisticItem)this.filterTestStatComboBox.getSelectedItem();
+        return (StatisticItem)this.filterStatComboBox.getSelectedItem();
     }
     
     /**
@@ -258,9 +258,9 @@ public class FilterSortRowsDialog extends JDialog
      * {@link #isSortingOn()} is true
      * @return  the selected sort statistic
      */
-    public TestStatisticItem getSelectedSortStatistic()
+    public StatisticItem getSelectedSortStatistic()
     {
-        return (TestStatisticItem)this.sortTestStatComboBox.getSelectedItem();
+        return (StatisticItem)this.sortStatComboBox.getSelectedItem();
     }
     
     /**
@@ -268,7 +268,7 @@ public class FilterSortRowsDialog extends JDialog
      */
     private void refreshFilterSpinnerModel()
     {
-        TestStatisticItem selectedFilterStat = this.getSelectedFilterStatistic();
+        StatisticItem selectedFilterStat = this.getSelectedFilterStatistic();
         if(selectedFilterStat != null)
         {
             SpinnerNumberModel spinnerNumModel = this.filterModels.get(selectedFilterStat);
@@ -284,47 +284,54 @@ public class FilterSortRowsDialog extends JDialog
     
     /**
      * Create a new filter spinner model
-     * @param testStatisticItem
+     * @param statisticItem
      *          the item that we're creating the spinner model for
      * @return
      *          the new spinner number model
      */
-    private SpinnerNumberModel makeFilterSpinnerModel(TestStatisticItem testStatisticItem)
+    private SpinnerNumberModel makeFilterSpinnerModel(StatisticItem statisticItem)
     {
-        final SpinnerNumberModel model;
-        switch(testStatisticItem.getTestStatisticSubtype())
+        if(statisticItem instanceof FoldChangeStatisticItem)
         {
-            // F observed seems to be bound between 0 and inf
-            case F_OBSERVED:
-            {
-                model = new SpinnerNumberModel(
-                        10.0,               // starting value
-                        0.0,                // min value
-                        Integer.MAX_VALUE,  // max value
-                        1.0);               // step size
-            }
-            break;
-            
-            // everything else seems to be bound between 0 and 1
-            default:
-            {
-                model = new SpinnerNumberModel(
-                        0.1,                // starting value
-                        0.0,                // min value
-                        1.0,                // max value
-                        0.1);               // step size
-            }
-            break;
+            return new SpinnerNumberModel(
+                    10.0,               // starting value
+                    0.0,                // min value
+                    Integer.MAX_VALUE,  // max value
+                    1.0);               // step size
         }
-        
-        return model;
+        else
+        {
+            TestStatisticItem testStatisticItem = (TestStatisticItem)statisticItem;
+            switch(testStatisticItem.getTestStatisticSubtype())
+            {
+                // F observed seems to be bound between 0 and inf
+                case F_OBSERVED:
+                {
+                    return new SpinnerNumberModel(
+                            10.0,               // starting value
+                            0.0,                // min value
+                            Integer.MAX_VALUE,  // max value
+                            1.0);               // step size
+                }
+                
+                // everything else seems to be bound between 0 and 1
+                default:
+                {
+                    return new SpinnerNumberModel(
+                            0.1,                // starting value
+                            0.0,                // min value
+                            1.0,                // max value
+                            0.1);               // step size
+                }
+            }
+        }
     }
 
     /**
      * Set the valid test stats for our filter
-     * @param testStatistics the stats
+     * @param statistics the stats
      */
-    public void setTestStatistics(final List<TestStatisticItem> testStatistics)
+    public void setStatistics(final List<StatisticItem> statistics)
     {
         SwingUtilities.invokeLater(new Runnable()
         {
@@ -333,31 +340,27 @@ public class FilterSortRowsDialog extends JDialog
              */
             public void run()
             {
-                FilterSortRowsDialog.this.setTestStatisticsNow(testStatistics);
+                FilterSortRowsDialog.this.setStatisticsNow(statistics);
             }
         });
     }
     
     /**
-     * Set the valid test stats for our filter assuming that we're running
+     * Set the valid stats for our filter assuming that we're running
      * in the AWT thread
-     * @param testStatistics the stats
+     * @param statistics the stats
      */
-    public void setTestStatisticsNow(final List<TestStatisticItem> testStatistics)
+    public void setStatisticsNow(final List<StatisticItem> statistics)
     {
-        this.filterTestStatModel.removeAllElements();
-        this.sortTestStatModel.removeAllElements();
+        this.filterStatModel.removeAllElements();
+        this.sortStatModel.removeAllElements();
         
-        for(TestStatisticItem currStats: testStatistics)
+        for(StatisticItem currStats: statistics)
         {
-            this.filterTestStatModel.addElement(new TestStatisticItem(
-                    currStats.getTestStatisticType(),
-                    currStats.getTestStatisticSubtype(),
-                    Formatting.FILTER));
-            this.sortTestStatModel.addElement(new TestStatisticItem(
-                    currStats.getTestStatisticType(),
-                    currStats.getTestStatisticSubtype(),
-                    Formatting.SORT));
+            this.filterStatModel.addElement(
+                    currStats.copyWithNewFormatting(Formatting.FILTER));
+            this.sortStatModel.addElement(
+                    currStats.copyWithNewFormatting(Formatting.SORT));
         }
         
         this.pack();
@@ -376,12 +379,12 @@ public class FilterSortRowsDialog extends JDialog
 
         javax.swing.JPanel mainPanel = new javax.swing.JPanel();
         filterCheckBox = new javax.swing.JCheckBox();
-        filterTestStatComboBox = new javax.swing.JComboBox();
+        filterStatComboBox = new javax.swing.JComboBox();
         filterSpinner = new javax.swing.JSpinner();
         filterByGeneListCheckBox = new javax.swing.JCheckBox();
         filterByGeneListComboBox = new javax.swing.JComboBox();
         sortCheckBox = new javax.swing.JCheckBox();
-        sortTestStatComboBox = new javax.swing.JComboBox();
+        sortStatComboBox = new javax.swing.JComboBox();
         javax.swing.JPanel controlPanel = new javax.swing.JPanel();
         closeButton = new javax.swing.JButton();
 
@@ -406,13 +409,13 @@ public class FilterSortRowsDialog extends JDialog
                     .add(filterByGeneListCheckBox))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(mainPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(sortTestStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(sortStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(mainPanelLayout.createSequentialGroup()
-                        .add(filterTestStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(filterStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(filterSpinner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 86, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(filterByGeneListComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -420,7 +423,7 @@ public class FilterSortRowsDialog extends JDialog
                 .addContainerGap()
                 .add(mainPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(filterCheckBox)
-                    .add(filterTestStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(filterStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(filterSpinner, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(mainPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -429,7 +432,7 @@ public class FilterSortRowsDialog extends JDialog
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(mainPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(sortCheckBox)
-                    .add(sortTestStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(sortStatComboBox, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -457,8 +460,8 @@ public class FilterSortRowsDialog extends JDialog
     private javax.swing.JComboBox filterByGeneListComboBox;
     private javax.swing.JCheckBox filterCheckBox;
     private javax.swing.JSpinner filterSpinner;
-    private javax.swing.JComboBox filterTestStatComboBox;
+    private javax.swing.JComboBox filterStatComboBox;
     private javax.swing.JCheckBox sortCheckBox;
-    private javax.swing.JComboBox sortTestStatComboBox;
+    private javax.swing.JComboBox sortStatComboBox;
     // End of variables declaration//GEN-END:variables
 }
