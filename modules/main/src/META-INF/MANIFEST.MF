@@ -20,6 +20,6 @@ Class-Path: \
     lib/jcommon-1.0.13.jar \
     lib/jfreechart-1.0.13.jar \
     \
-    lib/JRI-0.8-1.jar \
-    lib/JRI-Mac-natives-0.8-1.jar \
-    lib/JRI-Windows-natives-0.8-1.jar
+    lib/JRI-0.8-8.jar \
+    lib/JRI-Mac-natives-0.8-8.jar \
+    lib/JRI-Windows-natives-0.8-8.jar

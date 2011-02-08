@@ -1,12 +1,11 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE helpset PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 2.0//EN" "http://java.sun.com/products/javahelp/helpset_2_0.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE helpset PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp HelpSet Version 2.0//EN" "http://java.sun.com/products/javahelp/helpset_2_0.dtd">
 <helpset version="2.0">
-<title>J/maanova 1.0.0</title>
+<title>J/maanova 1.1.0</title>
 <maps>
 <homeID>first-topic</homeID>
-<mapref location="map.jhm" />
+<mapref location="map.jhm"/>
 </maps>
-<view xml:lang="ar" mergetype="javax.help.UniteAppendMerge">
+<view mergetype="javax.help.UniteAppendMerge" xml:lang="ar">
   <name>TOC</name>
   <label>helpset.toc.title</label>
   <type>javax.help.TOCView</type>
@@ -16,8 +15,6 @@
 <name>Search</name>
 <label>helpset.search.title</label>
 <type>javax.help.SearchView</type>
-<data engine="com.sun.java.help.search.DefaultSearchEngine">
-JavaHelpSearch
-</data>
+<data engine="com.sun.java.help.search.DefaultSearchEngine">JavaHelpSearch</data>
 </view>
 </helpset>

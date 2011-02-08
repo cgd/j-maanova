@@ -1,35 +1,34 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE toc PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 2.0//EN" "http://java.sun.com/products/javahelp/toc_2_0.dtd">
 <toc version="2.0">
-<tocitem text="J/maanova 1.0.0" target="first-topic">
-<tocitem text="Copyright and License" target="license" />
-<tocitem text="Installation and Uninstallation" target="installation" />
-<tocitem text="Saving and Opening Projects" target="save-open-projects" />
-<tocitem text="Exporting R Commands" target="export-r-commands" />
-<tocitem text="Exporting R Data" target="export-r-data" />
-<tocitem text="Exporting Microarray Data to CSV" target="export-ma-data-to-csv" />
-<tocitem text="Interacting With the R Terminal" target="r-terminal" />
-<tocitem text="Loading Microarray Data" target="load-data">
-<tocitem text="Loading Tab-Delimited Microarray Data" target="load-tab-data" />
-<tocitem text="Loading Affymetrix Microarray Data" target="load-affy-data" />
+<tocitem target="first-topic" text="J/maanova 1.1.0">
+<tocitem target="license" text="Copyright and License"/>
+<tocitem target="installation" text="Installation and Uninstallation"/>
+<tocitem target="save-open-projects" text="Saving and Opening Projects"/>
+<tocitem target="export-r-commands" text="Exporting R Commands"/>
+<tocitem target="export-r-data" text="Exporting R Data"/>
+<tocitem target="export-ma-data-to-csv" text="Exporting Microarray Data to CSV"/>
+<tocitem target="r-terminal" text="Interacting With the R Terminal"/>
+<tocitem target="load-data" text="Loading Microarray Data">
+<tocitem target="load-tab-data" text="Loading Tab-Delimited Microarray Data"/>
+<tocitem target="load-affy-data" text="Loading Affymetrix Microarray Data"/>
 </tocitem>
-<tocitem text="Analysis" target="analysis">
-<tocitem text="Show Experiment Design" target="design" />
-<tocitem text="Fit ANOVA Model" target="fit-anova" />
-<tocitem text="Test ANOVA Model" target="test-anova" />
-<tocitem text="Test Results Table" target="test-results-table" />
-<tocitem text="Gene Lists" target="gene-list" />
+<tocitem target="analysis" text="Analysis">
+<tocitem target="design" text="Show Experiment Design"/>
+<tocitem target="fit-anova" text="Fit ANOVA Model"/>
+<tocitem target="test-anova" text="Test ANOVA Model"/>
+<tocitem target="test-results-table" text="Test Results Table"/>
+<tocitem target="gene-list" text="Gene Lists"/>
 </tocitem>
-<tocitem text="Graphs" target="graphs">
-<tocitem text="Array Intensity Scatter Plot" target="array-scatter-plot" />
-<tocitem text="Plot Residuals vs. Estimates" target="residual-plot" />
-<tocitem text="Volcano Plot" target="volcano-plot" />
+<tocitem target="graphs" text="Graphs">
+<tocitem target="array-scatter-plot" text="Array Intensity Scatter Plot"/>
+<tocitem target="residual-plot" text="Plot Residuals vs. Estimates"/>
+<tocitem target="volcano-plot" text="Volcano Plot"/>
 </tocitem>
-<tocitem text="R Documentation" target="r-docs">
-<tocitem text="read.madata Function" target="read-madata" />
-<tocitem text="fitmaanova Function" target="fitmaanova" />
-<tocitem text="matest Function" target="matest" />
-<tocitem text="PairContrast Function" target="pair-contrast" />
+<tocitem target="r-docs" text="R Documentation">
+<tocitem target="read-madata" text="read.madata Function"/>
+<tocitem target="fitmaanova" text="fitmaanova Function"/>
+<tocitem target="matest" text="matest Function"/>
+<tocitem target="pair-contrast" text="PairContrast Function"/>
 </tocitem>
 </tocitem>
 </toc>

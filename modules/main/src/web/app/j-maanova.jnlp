@@ -3,26 +3,26 @@
 <!-- for dev test deployment -->
 <!--<jnlp
     spec="1.5+"
-    codebase="file:/Users/kss/projects/j-maanova-dev/web-dist/app/"
+    codebase="file:/Users/kss/projects/j-maanova-git/web-dist/app/"
     href="j-maanova.jnlp"
     version="1.0.0">-->
 
 <!-- for internal test deployment -->
 <jnlp
     spec="1.5+"
-    codebase="http://zapp.jax.org/jmaanova/1.0.0-build5/app"
+    codebase="http://zapp.jax.org/jmaanova/1.1.0-build5/app"
     href="j-maanova.jnlp"
     version="1.0.0">
 
 <!-- for public deployment -->
 <!--<jnlp
     spec="1.5+"
-    codebase="http://cgd.jax.org/churchill-apps/jmaanova-1.0.0/app"
+    codebase="http://cgd.jax.org/churchill-apps/jmaanova-1.1.0/app"
     href="j-maanova.jnlp"
     version="1.0.0">-->
     
     <information>
-        <title>J-maanova 1.0.0</title>
+        <title>J-maanova 1.1.0</title>
         <vendor>The Jackson Laboratory</vendor>
         <homepage href="http://churchill.jax.org"/>
         <description kind="one-line">A graphical MAANOVA analysis tool which sits on R/maanova</description>
@@ -44,8 +44,8 @@
         we really need to tease apart which jars are needed just by manifest
         and just by JNLP launcher/installer.
         -->
-        <jar href="dist/j-maanova-1.0.0.jar"/>
-        <jar href="dist/lib/j-maanova-classpath-bundle-1.0.0.jar"/>
+        <jar href="dist/j-maanova-1.1.0.jar"/>
+        <jar href="dist/lib/j-maanova-classpath-bundle-1.1.0.jar"/>
         <jar href="dist/lib/data-plots-1.0.jar"/>
         <jar href="dist/lib/rjava-conf-schema-1.0.jar"/>
         <jar href="dist/lib/java-util-1.0.jar"/>
@@ -64,15 +64,15 @@
         <jar href="dist/lib/jcommon-1.0.13.jar"/>
         <jar href="dist/lib/jfreechart-1.0.13.jar"/>
 
-        <jar href="dist/lib/JRI-0.8-1.jar"/>
+        <jar href="dist/lib/JRI-0.8-8.jar"/>
     </resources>
     
     <resources os="Mac OS X">
-        <jar href="dist/lib/JRI-Mac-natives-0.8-1.jar"/>
+        <jar href="dist/lib/JRI-Mac-natives-0.8-8.jar"/>
     </resources>
     
     <resources os="Windows">
-        <jar href="dist/lib/JRI-Windows-natives-0.8-1.jar"/>
+        <jar href="dist/lib/JRI-Windows-natives-0.8-8.jar"/>
     </resources>
     
     <application-desc main-class="org.jax.maanova.MaanovaLauncher"/>
