@@ -1,6 +1,0 @@
-:title Show Experiment Design
-:label design
-
-You can view the experiment design matrix by selecting one of the ::**Analysis->Show Experiment Design->...**:: menu items. Alternatively you can **right click** on an experiment node in the project tree
-
-:image show-design-rt-click.png|Right Click for Design

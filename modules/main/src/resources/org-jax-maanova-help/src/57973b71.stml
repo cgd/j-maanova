@@ -1,4 +1,0 @@
-:title Exporting R Commands
-:label export-r-commands
-
-You can use the ::**File->Export R Commands to Script...**:: menu item to save your project's R command history to a script file. You can run this script directly via the R command line or make modifications to the script before running it. Exporting the script gives you a convenient way to use some powerful R commands that may not be available directly from the R/maanova interface.

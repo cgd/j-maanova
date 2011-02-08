@@ -1,4 +1,0 @@
-:title Exporting Microarray Data to CSV
-:label export-ma-data-to-csv
-
-You can use the ::**File->Show Experiment Design->...**:: to save your array data to a file. This data will reflect any normalization (Eg. RMA, log2) that has been performed.

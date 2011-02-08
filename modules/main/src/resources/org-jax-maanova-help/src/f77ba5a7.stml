@@ -1,4 +1,0 @@
-:title R Documentation
-:label r-docs
-
-This section contains a portion of the R/maanova documentation which is relevant to the interfaces implemented in J/maanova. For the complete documentation you can either open the R terminal and enter ::**help.start()**:: at the command prompt, or download the reference manual from ::**http:\//www.bioconductor.org/packages/release/bioc/html/maanova.html**::

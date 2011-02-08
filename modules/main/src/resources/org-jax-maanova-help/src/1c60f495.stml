@@ -1,8 +1,0 @@
-:title J/maanova 1.0.0
-:label first-topic
-
-The ::**J/maanova**:: application is an <<license|open source>> graphical front-end to the ::**R/maanova**:: microarray analysis package. By providing an intuitive interface to the underlying R/maanova functionality J/maanova allows users to perform sophisticated analysis of microarray data without having to learn the details of the R scripting environment. J/maanova also makes use of the ::**affy**:: R package for loading and normalizing Affymetrix CEL files.
-
-:h2 Contact
-
-Visit ::**http:\//churchill.jax.org/software/jmaanova.shtml**:: to get the latest release and new information about J/maanova. Please send any questions or comments that you have abount J/maanova to ::**maanova@jax.org**::

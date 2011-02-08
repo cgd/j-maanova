@@ -1,4 +1,0 @@
-:title Loading Microarray Data
-:label load-data
-
-J/maanova supports loading microarray data in tab-delimited or Affymetrix CEL file format. In either case a design file must be provided in tab-delimited format.
