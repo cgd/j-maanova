@@ -8,14 +8,14 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/managed-jvm-launcher"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/r-interface"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/swing-layout-1.0.3.jar"/>
 	<classpathentry kind="lib" path="lib/jcommon-1.0.13.jar"/>
-	<classpathentry kind="lib" path="lib/jfreechart-1.0.13.jar" sourcepath="/Users/kss/projects/third-party/jfreechart-1.0.13"/>
 	<classpathentry kind="lib" path="lib/jhall-2.0.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-api-2.1.6.jar"/>
 	<classpathentry kind="lib" path="lib/jaxb-xjc-2.1.6.jar"/>
 	<classpathentry kind="lib" path="lib/activation-2.1.6.jar"/>
 	<classpathentry kind="lib" path="lib/jsr173_1.0_api-2.1.6.jar"/>
 	<classpathentry kind="lib" path="lib/JRI-0.8-8.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.13.jar"/>
+	<classpathentry kind="lib" path="lib/swing-layout-1.0.3.jar"/>
 	<classpathentry kind="output" path="eclipse-output"/>
 </classpath>

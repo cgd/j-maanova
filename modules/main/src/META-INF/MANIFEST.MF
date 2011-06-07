@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Main-Class: org.jax.maanova.MaanovaLauncher
 Class-Path: \
-    lib/j-maanova-classpath-bundle-1.1.0.jar \
+    lib/j-maanova-classpath-bundle-1.1.1.jar \
     lib/data-plots-1.0.jar \
     lib/rjava-conf-schema-1.0.jar \
     lib/java-util-1.0.jar \
